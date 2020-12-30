@@ -23,7 +23,7 @@ async function start(): Promise<any> {
   }
 }
 
-function initExpressMiddleware() {
+function initExpressMiddleware(): void {
   app.set('port', (process.env.PORT || 3000));
   app.use('/', express.static(path.join(__dirname, '../public')));
   app.use(express.json());
@@ -32,45 +32,47 @@ function initExpressMiddleware() {
   if (process.env.NODE_ENV !== 'test') {
     app.use(morgan('dev'));
   }
-  process.on("uncaughtException", (err) => {
-    if (err) console.log(err, err.stack);
+  process.on('uncaughtException', (err) => {
+    if (err){
+      console.log(err, err.stack);
+    }
   });
 }
 
-function initCustomMiddleware() {
-  if (process.platform === "win32") {
-    require("readline")
+function initCustomMiddleware(): void {
+  if (process.platform === 'win32') {
+    require('readline')
       .createInterface({
         input: process.stdin,
         output: process.stdout,
       })
-      .on("SIGINT", () => {
-        console.log("SIGINT: Closing MongoDB connection");
+      .on('SIGINT', () => {
+        console.log('SIGINT: Closing MongoDB connection');
         disconnectDatabase();
       });
   }
 
-  process.on("SIGINT", () => {
-    console.log("SIGINT: Closing MongoDB connection");
+  process.on('SIGINT', () => {
+    console.log('SIGINT: Closing MongoDB connection');
     disconnectDatabase();
   });
 }
 
-function initDbSeeder() {
+function initDbSeeder(): void {
 
 }
 
-function initRoutes() {
+function initRoutes(): void {
   setRoutes(app);
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 }
 
-function startApp() {
+function startApp(): void {
   app.listen(app.get('port'), () => {
     console.log(
-      "Listening on http://localhost:",
+      'Listening on http://localhost:',
       app.get('port')
     );
   });

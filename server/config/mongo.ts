@@ -23,7 +23,7 @@ async function connectDatabase(): Promise<any> {
   });
 }
 
-function getConnectionString() {
+function getConnectionString(): string {
   // Fixme: Move test to const
   if (process.env.NODE_ENV === 'test') {
     return process.env.MONGODB_TEST_URI;
@@ -32,7 +32,7 @@ function getConnectionString() {
   }
 }
 
-function getConnectionOption() {
+function getConnectionOption(): object {
   return {
     promiseLibrary: global.Promise,
     useCreateIndex: true,
@@ -42,7 +42,7 @@ function getConnectionOption() {
   };
 }
 
-function disconnectDatabase() {
+function disconnectDatabase(): void {
   connection.close(() => {
     console.log('Mongoose default connection disconnected through app termination');
     process.exit(0);
