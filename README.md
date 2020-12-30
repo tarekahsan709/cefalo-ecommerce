@@ -1,5 +1,5 @@
 # Cefalo Full-stack Web Developer Assignment 
-[![](https://github.com/davideviolante/Angular-Full-Stack/workflows/Build/badge.svg)](https://github.com/DavideViolante/Angular-Full-Stack/actions?query=workflow%3ABuild) [![](https://github.com/davideviolante/Angular-Full-Stack/workflows/Tests/badge.svg)](https://github.com/DavideViolante/Angular-Full-Stack/actions?query=workflow%3ATests) [![Dependencies](https://david-dm.org/DavideViolante/Angular-Full-Stack.svg)](https://david-dm.org/DavideViolante/Angular-Full-Stack)
+[![](https://github.com/tarekahsan709/cefalo-ecommerce/workflows/Build/badge.svg)](https://github.com/tarekahsan709/cefalo-ecommerce/actions?query=workflow%3ABuild) [![](https://github.com/tarekahsan709/cefalo-ecommerce/workflows/Tests/badge.svg)](https://github.com/tarekahsan709/cefalo-ecommerce/actions?query=workflow%3ATests)
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
 * [**M**ongoose.js](http://www.mongoosejs.com) ([MongoDB](https://www.mongodb.com)): database
