@@ -4,8 +4,8 @@ import * as morgan from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 
+import setRoutes from './routes';
 import { connectDatabase, disconnectDatabase } from './config/mongo';
-import setRoutes from './routes/routes';
 
 const app = express();
 dotenv.config();
@@ -17,7 +17,7 @@ async function start(): Promise<any> {
     await connectDatabase();
     initDbSeeder();
     initRoutes();
-    startApp();
+    startServer();
   } catch (err) {
     console.error(err);
   }
@@ -69,7 +69,7 @@ function initRoutes(): void {
   });
 }
 
-function startApp(): void {
+function startServer(): void {
   app.listen(app.get('port'), () => {
     console.log(
       'Listening on http://localhost:',

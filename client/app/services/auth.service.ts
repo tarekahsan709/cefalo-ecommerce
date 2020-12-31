@@ -32,7 +32,7 @@ export class AuthService {
         const decodedUser = this.decodeUserFromToken(res.token);
         this.setCurrentUser(decodedUser);
         this.loggedIn = true;
-        this.router.navigate(['/']);
+        this.router.navigate(['/account']);
       },
       error => this.toast.setMessage('invalid email or password!', 'danger')
     );

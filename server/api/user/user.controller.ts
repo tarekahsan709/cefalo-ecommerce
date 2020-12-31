@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 
-import User from '../models/user';
-import BaseCtrl from './base';
+import User from '../user/user.model';
+import BaseCtrl from '../../util/base';
 
 class UserCtrl extends BaseCtrl {
   model = User;

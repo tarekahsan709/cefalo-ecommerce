@@ -1,15 +1,13 @@
 import * as bcrypt from 'bcryptjs';
 import * as mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-  username: String,
-  email: { type: String, unique: true, lowercase: true, trim: true },
-  password: String,
-  role: String
-});
+import UserSchema from '../../schemas/user.schema';
 
-// Before saving the user, hash the password
-userSchema.pre('save', function(next): void {
+/**
+ * Pre-save hook
+ * Before saving the user, hash the password
+ */
+UserSchema.pre('save', function(next): void {
   const user = this;
   if (!user.isModified('password')) { return next(); }
   bcrypt.genSalt(10, (err, salt) => {
@@ -22,21 +20,29 @@ userSchema.pre('save', function(next): void {
   });
 });
 
-userSchema.methods.comparePassword = function(candidatePassword, callback): void {
+/**
+ * Methods
+ */
+UserSchema.methods.comparePassword = function(candidatePassword, callback): void {
   bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
     if (err) { return callback(err); }
     callback(null, isMatch);
   });
 };
 
-// Omit the password when returning a user
-userSchema.set('toJSON', {
+/**
+ * Omit the password when returning a user
+ */
+UserSchema.set('toJSON', {
   transform: (doc, ret, options) => {
     delete ret.password;
     return ret;
   }
 });
 
-const User = mongoose.model('User', userSchema);
+/**
+ * Model
+ */
+const User =  mongoose.model('User', UserSchema, 'users');
 
 export default User;
