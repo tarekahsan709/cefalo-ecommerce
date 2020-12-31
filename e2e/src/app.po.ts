@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Angular2FullStackPage {
+export class CefaloEcommercePages {
   async navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl);
   }
