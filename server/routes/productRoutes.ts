@@ -1,6 +1,6 @@
-import { Router } from "express";
-import { ProductController } from "../controllers/productController";
-import { authenticateJWT } from '../auth/authService';
+import { Router } from 'express';
+import { ProductController } from '../controllers/productController';
+import { isAuthenticate } from '../auth/authService';
 
 
 export class ProductRoutes {
@@ -14,10 +14,11 @@ export class ProductRoutes {
     }
 
     routes() {
-        this.router.get("/", this.productController.getProducts);
-        this.router.get("/:id", this.productController.getProduct);
-        this.router.post("/", authenticateJWT, this.productController.createProduct);
-        this.router.put("/:id", authenticateJWT, this.productController.updateProduct);
-        this.router.delete("/:id", authenticateJWT, this.productController.deleteProduct);
+        this.router.get('/', isAuthenticate, this.productController.getProducts);
+        this.router.get('/:id', isAuthenticate, this.productController.getProduct);
+
+        this.router.post('/', isAuthenticate, this.productController.createProduct);
+        this.router.put('/:id', isAuthenticate, this.productController.updateProduct);
+        this.router.delete('/:id', isAuthenticate, this.productController.deleteProduct);
     }
 }

@@ -1,11 +1,12 @@
-import * as passportLocal from "passport-local";
-import * as passportJwt from "passport-jwt";
+import * as passportLocal from 'passport-local';
+import * as passportJwt from 'passport-jwt';
+
+import { User } from '../models/user';
+import { JWT_SECRET } from '../util/secrets';
 
 const LocalStrategy = passportLocal.Strategy;
 const JwtStrategy = passportJwt.Strategy;
 const ExtractJwt = passportJwt.ExtractJwt;
-
-import { User } from "../models/user";
 
 module.exports = (passport: any) => {
   /*
@@ -92,7 +93,7 @@ module.exports = (passport: any) => {
             if (isMatch) {
               return done(undefined, user);
             }
-            return done(undefined, false, {message: "Invalid username or password."});
+            return done(undefined, false, {message: 'Invalid username or password.'});
           });
         });
       }
@@ -108,9 +109,10 @@ module.exports = (passport: any) => {
     new JwtStrategy(
       {
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-        secretOrKey: String(process.env.SECRET_TOKEN),
+        secretOrKey: JWT_SECRET,
       },
       (jwtPayload: any, done: any, req: any) => {
+
         User.findOne({_id: jwtPayload._id}, (err: any, user: any) => {
           if (err) {
             return done(err, false);

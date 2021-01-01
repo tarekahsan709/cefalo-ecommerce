@@ -12,3 +12,44 @@
 {"message":"Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (net.js:1301:14)\n    at listenInCluster (net.js:1349:12)\n    at Server.listen (net.js:1437:7)\n    at Function.listen (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\express\\lib\\application.js:618:24)\n    at startServer (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\app.js:74:9)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\app.js:24:13\n    at Generator.next (<anonymous>)\n    at fulfilled (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\tslib\\tslib.js:111:62)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)","level":"error"}
 {"message":"We have connected to mongodb","level":"info"}
 {"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"_id":"5fef59dd84b49f63f883b252","name":"nazmul ahsan","email":"nazmul.ahsan@jeeon.co","iat":1609522233,"exp":1609781433,"iss":"5fef59dd84b49f63f883b252","level":"debug","message":"Jwt payload"}
+{"_id":"5fef59dd84b49f63f883b252","name":"nazmul ahsan","email":"nazmul.ahsan@jeeon.co","iat":1609522233,"exp":1609781433,"iss":"5fef59dd84b49f63f883b252","level":"debug","message":"Jwt payload"}
+{"_id":"5fef59dd84b49f63f883b252","name":"nazmul ahsan","email":"nazmul.ahsan@jeeon.co","iat":1609522233,"exp":1609781433,"iss":"5fef59dd84b49f63f883b252","level":"debug","message":"Jwt payload"}
+{"_id":"5fef59dd84b49f63f883b252","name":"nazmul ahsan","email":"nazmul.ahsan@jeeon.co","iat":1609522233,"exp":1609781433,"iss":"5fef59dd84b49f63f883b252","level":"debug","message":"Jwt payload"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"SIGINT: Closing MongoDB connection","level":"info"}

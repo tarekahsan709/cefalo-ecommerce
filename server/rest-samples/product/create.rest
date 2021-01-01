@@ -1,10 +1,29 @@
 POST http://localhost:3000/api/v1/products HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lIiwiaWF0IjoxNTUxNDc0MDcwfQ.TJF3NcMB7fpucn8rCv3Vvb6Ml8A_qd-xAXbbj3CEC0M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmVmNTlkZDg0YjQ5ZjYzZjg4M2IyNTIiLCJuYW1lIjoibmF6bXVsIGFoc2FuIiwiZW1haWwiOiJuYXptdWwuYWhzYW5AamVlb24uY28iLCJpYXQiOjE2MDk1MjIyMzMsImV4cCI6MTYwOTc4MTQzMywiaXNzIjoiNWZlZjU5ZGQ4NGI0OWY2M2Y4ODNiMjUyIn0.leLrIYQp3Ua_mPLrvGaaLM3FgHR-OVcycGIjHjZ_xj4
 content-type: application/json
 
 {
-  "productId": "13",
-  "name": "Orange1",
-  "price": 5,
-  "quantity": 6
+  "id": "1",
+  "name": "T-Shirt",
+  "price": "250",
+  "available": true,
+  "variants": [
+    {
+      "color": "white",
+      "size": [
+        "large",
+        "medium",
+        "extra-large"
+      ],
+      "quantity": "3"
+    },
+    {
+      "color": "red",
+      "size": [
+        "large",
+        "medium"
+      ],
+      "quantity": "7"
+    }
+  ]
 }

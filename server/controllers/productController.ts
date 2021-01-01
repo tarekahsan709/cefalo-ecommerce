@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { IProduct, Product } from "../models/product";
+import { Request, Response } from 'express';
+import { IProduct, Product } from '../models/product';
 
 export class ProductController {
 
@@ -9,7 +9,7 @@ export class ProductController {
     }
 
     public async getProduct(req: Request, res: Response): Promise<void> {
-        const product = await Product.findOne({ productId: req.params.id });
+        const product = await Product.findOne({ id: req.params.id });
         if (product === null) {
             res.sendStatus(404);
         } else {
@@ -19,7 +19,7 @@ export class ProductController {
 
     public async createProduct(req: Request, res: Response): Promise<void> {
         const newProduct: IProduct = new Product(req.body);
-        const product = await Product.findOne({ productId: req.body.productId });
+        const product = await Product.findOne({ id: req.body.id });
         if (product === null) {
             const result = await newProduct.save();
             if (result === null) {
@@ -34,7 +34,7 @@ export class ProductController {
     }
 
     public async updateProduct(req: Request, res: Response): Promise<void> {
-        const product = await Product.findOneAndUpdate({ productId: req.params.id }, req.body);
+        const product = await Product.findOneAndUpdate({ id: req.params.id }, req.body);
         if (product === null) {
             res.sendStatus(404);
         } else {
@@ -44,11 +44,11 @@ export class ProductController {
     }
 
     public async deleteProduct(req: Request, res: Response): Promise<void> {
-        const product = await Product.findOneAndDelete({ productId: req.params.id });
+        const product = await Product.findOneAndDelete({ id: req.params.id });
         if (product === null) {
             res.sendStatus(404);
         } else {
-            res.json({ response: "Product deleted Successfully" });
+            res.json({ response: 'Product deleted Successfully' });
         }
     }
 }

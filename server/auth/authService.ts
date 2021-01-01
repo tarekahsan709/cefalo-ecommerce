@@ -1,8 +1,9 @@
 import { NextFunction, Request, Response } from "express";
 import * as passport from 'passport';
 import * as jwt from 'jsonwebtoken';
+import { JWT_SECRET } from '../util/secrets';
 
-export function authenticateJWT(req: Request, res: Response, next: NextFunction) {
+export function isAuthenticate(req: Request, res: Response, next: NextFunction) {
   passport.authenticate('jwt', {session: false})(req, res, next);
 }
 
@@ -33,7 +34,7 @@ export function generateAccessToken(user): any {
       name: user.name,
       email: user.email,
     },
-    process.env.JWT_SECRET,
+    JWT_SECRET,
     {
       expiresIn: '3d',
       issuer: user._id.toString(),
