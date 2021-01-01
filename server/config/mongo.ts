@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 import logger from '../util/logger';
+import { MONGODB_TEST_URI, MONGODB_URI } from '../util/secrets';
 
 let connection = null;
 
@@ -29,9 +30,9 @@ function connectDatabase() {
 
 function getConnectionString(): string {
   if (process.env.NODE_ENV === 'test') {
-    return process.env.MONGODB_TEST_URI;
+    return MONGODB_TEST_URI;
   } else {
-    return process.env.MONGODB_URI;
+    return MONGODB_URI;
   }
 }
 

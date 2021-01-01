@@ -53,3 +53,23 @@
 {"level":"info","message":"API is running at http://localhost:%d"}
 {"message":"We have connected to mongodb","level":"info"}
 {"message":"SIGINT: Closing MongoDB connection","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"SIGINT: Closing MongoDB connection","level":"info"}
+{"message":"Mongoose default connection disconnected through app termination","level":"info"}
