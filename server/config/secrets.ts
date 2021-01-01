@@ -1,4 +1,4 @@
-import logger from './logger';
+import logger from '../util/logger';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 
@@ -13,6 +13,7 @@ if (fs.existsSync('.env')) {
 export const ENVIRONMENT = process.env.NODE_ENV;
 const prod = ENVIRONMENT === 'production'; // Anything else is treated as 'dev'
 
+export const SEED_DB =  process.env['SEED_DB'];
 export const JWT_SECRET = process.env['JWT_SECRET'];
 export const MONGODB_URI = prod ? process.env['MONGODB_URI'] : process.env['MONGODB_URI_LOCAL'];
 export const MONGODB_TEST_URI =  process.env['MONGODB_TEST_URI'];

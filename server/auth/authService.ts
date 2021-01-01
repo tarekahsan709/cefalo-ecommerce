@@ -1,32 +1,21 @@
 import { NextFunction, Request, Response } from "express";
 import * as passport from 'passport';
 import * as jwt from 'jsonwebtoken';
-import { JWT_SECRET } from '../util/secrets';
+import { JWT_SECRET } from '../config/secrets';
 
+// FIXME: Refactor return
+/**
+ * Attaches the user object to the request if authenticated
+ * Otherwise returns undefined
+ */
 export function isAuthenticate(req: Request, res: Response, next: NextFunction) {
   passport.authenticate('jwt', {session: false})(req, res, next);
 }
 
-export function authorizeJWT(req: Request, res: Response, next: NextFunction) {
-  passport.authenticate("jwt", function (err, user, jwtToken) {
-    if (err) {
-      console.log(err);
-      return res.status(401).json({status: "error", code: "unauthorized"});
-    }
-    if (!user) {
-      return res.status(401).json({status: "error", code: "unauthorized"});
-    } else {
-      const scope = req.baseUrl.split("/").slice(-1)[0];
-      const authScope = jwtToken.scope;
-      if (authScope && authScope.indexOf(scope) > -1) {
-        return next();
-      } else {
-        return res.status(401).json({status: "error", code: "unauthorized"});
-      }
-    }
-  })(req, res, next);
-}
-
+// FIXME: Check sign
+/**
+ * Returns a jwt token signed by the app secret
+ */
 export function generateAccessToken(user): any {
   return jwt.sign(
     {
@@ -41,7 +30,9 @@ export function generateAccessToken(user): any {
     }
   );
 }
-
+/**
+ * Returns the user profile with access token
+ */
 export function formatProfile(user): any {
   return {
     id: user._id,

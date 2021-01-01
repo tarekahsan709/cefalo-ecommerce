@@ -1,5 +1,20 @@
-//FIXME: Implement Seeding
-export const products = [
+import logger from '../util/logger';
+
+import { User } from '../models/user';
+import { Product } from '../models/product';
+
+const users = [
+  {
+    name: 'Test User',
+    email: 'test@example.com',
+    password: 'test'
+  }, {
+    name: 'Admin',
+    email: 'admin@example.com',
+    password: 'admin'
+  }
+]
+const products = [
   {
     "id": 1,
     "name": "Towel Multifold",
@@ -151,3 +166,38 @@ export const products = [
     "available": true,
     "variants": [{"color": "Violet", "size": ['large', 'medium', 'extra-large'], "quantity": 211}]
   }]
+
+export class Seed {
+
+  constructor() {
+
+  }
+
+  /**
+   * Remove all users from the collection and Add seed users to collection
+   */
+  public async seedUsers() {
+    try {
+      await User.deleteMany({});
+      await User.insertMany(users);
+    } catch (e) {
+      logger.error("Error populating user", e)
+    }
+    logger.info('Finished populating users')
+  }
+
+  /**
+   * Remove all products from the collection and Add seed users to collection
+   */
+  public async seedProducts() {
+    try {
+      await Product.deleteMany({});
+      await Product.insertMany(products);
+    } catch (e) {
+      logger.error("Error populating products", e)
+    }
+    logger.info('Finished populating products')
+  }
+}
+
+

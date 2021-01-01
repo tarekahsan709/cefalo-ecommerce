@@ -10,7 +10,7 @@ export const variantSchema: Schema = new Schema({
   color: String,
   size: {
     type: [String],
-    enum: ['medium', 'large', 'extra-large'],
+    enum: ['small','medium', 'large', 'extra-large'],
   },
   quantity: {
     type: Number,

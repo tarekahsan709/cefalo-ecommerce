@@ -2,7 +2,7 @@ import * as passportLocal from 'passport-local';
 import * as passportJwt from 'passport-jwt';
 
 import { User } from '../models/user';
-import { JWT_SECRET } from '../util/secrets';
+import { JWT_SECRET } from './secrets';
 
 const LocalStrategy = passportLocal.Strategy;
 const JwtStrategy = passportJwt.Strategy;
@@ -99,7 +99,7 @@ module.exports = (passport: any) => {
       }
     )
   );
-
+  // FIXME: Refactoring
   /*
    * JWT STRATEGY
    * to verify the validity of json web token

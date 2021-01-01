@@ -4,11 +4,17 @@ import * as dotenv from 'dotenv';
 import * as passport from 'passport';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
+import * as mongoose from 'mongoose';
 
 import { connectDatabase, disconnectDatabase } from './config/mongo';
+import { SEED_DB } from './config/secrets';
+import { Seed } from './config/Seed';
+
 import { ProductRoutes } from './routes/productRoutes';
 import { UserRoutes } from './routes/userRoutes';
+
 import logger from './util/logger';
+import { addWarning } from '@angular-devkit/build-angular/src/utils/webpack-diagnostics';
 
 
 class Server {
@@ -18,12 +24,11 @@ class Server {
   constructor() {
     this.app = express();
     dotenv.config();
+    connectDatabase();
     Server.configPassport();
     this.initExpressMiddleware();
     this.initCustomMiddleware();
     this.initRoutes();
-    Server.connectDatabase();
-    this.runDbSeed();
   }
 
   private static configPassport(): void {
@@ -64,14 +69,6 @@ class Server {
       logger.info('SIGINT: Closing MongoDB connection');
       disconnectDatabase();
     });
-  }
-
-  private static connectDatabase(): void {
-    connectDatabase();
-  }
-
-  private runDbSeed(): void {
-
   }
 
   private initRoutes(): void {
