@@ -6,12 +6,11 @@ import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 
 import { connectDatabase, disconnectDatabase } from './config/mongo';
-
 import { ProductRoutes } from './routes/productRoutes';
 import { UserRoutes } from './routes/userRoutes';
-
 import logger from './util/logger';
 
+const API_BASE_URL = '/api/v1/';
 
 class Server {
 
@@ -32,7 +31,7 @@ class Server {
   }
 
   private initExpressMiddleware(): void {
-    this.app.set("port", process.env.PORT || 3000);
+    this.app.set('port', process.env.PORT || 3000);
     this.app.use('/', express.static(path.join(__dirname, '../public')));
     this.app.use(express.json());
     this.app.use(express.urlencoded({extended: false}));
@@ -68,12 +67,12 @@ class Server {
   }
 
   private initRoutes(): void {
-    this.app.use('/api/v1/users', new UserRoutes().router);
-    this.app.use('/api/v1/products', new ProductRoutes().router);
+    this.app.use(`${API_BASE_URL}users`, new UserRoutes().router);
+    this.app.use(`${API_BASE_URL}products`, new ProductRoutes().router);
   }
 
   public start(): void {
-    this.app.listen(this.app.get("port"), () => {
+    this.app.listen(this.app.get('port'), () => {
       logger.info(
         'API is running at http://localhost:%d',
         this.app.get('port')
