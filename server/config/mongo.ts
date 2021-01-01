@@ -1,30 +1,33 @@
 import * as mongoose from 'mongoose';
+import logger from '../util/logger';
 
 let connection = null;
 
-async function connectDatabase(): Promise<any> {
+function connectDatabase() {
   const connectionString = getConnectionString();
   const connectionOptions = getConnectionOption();
 
-  await mongoose.connect(connectionString, connectionOptions, (err) => {
-    if (err) {
-      console.log('mongoose.connect() failed: ' + err);
-    }
-  });
+  const run = async () => {
+    await mongoose.connect(connectionString, connectionOptions, (err) => {
+      if (err) {
+        logger.error('mongoose.connect() failed: ' + err);
+      }
+    });
+    connection = await mongoose.connection;
+  };
 
-  connection = await mongoose.connection;
+  run().catch(error => console.error(error));
 
   mongoose.connection.on('error', (err) => {
-    console.log('Error connecting to MongoDB: ' + err);
+    logger.error('Error connecting to MongoDB: ' + err);
   });
 
   mongoose.connection.once('open', () => {
-    console.log('We have connected to mongodb');
+    logger.info('We have connected to mongodb');
   });
 }
 
 function getConnectionString(): string {
-  // Fixme: Move test to const
   if (process.env.NODE_ENV === 'test') {
     return process.env.MONGODB_TEST_URI;
   } else {
@@ -44,7 +47,7 @@ function getConnectionOption(): object {
 
 function disconnectDatabase(): void {
   connection.close(() => {
-    console.log('Mongoose default connection disconnected through app termination');
+    logger.info('Mongoose default connection disconnected through app termination');
     process.exit(0);
   });
 }

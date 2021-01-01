@@ -3,8 +3,8 @@ import chaiHttp = require('chai-http');
 import { describe, it } from 'mocha';
 
 process.env.NODE_ENV = 'test';
-import { app } from '../app';
-import User from '../api/user/user.model';
+import { server } from '../server';
+import { User } from '../models/user';
 
 chai.use(chaiHttp).should();
 
@@ -19,7 +19,7 @@ describe('Users', () => {
   describe('Backend tests for users', () => {
 
     it('should get all the users', done => {
-      chai.request(app)
+      chai.request(server)
         .get('/api/users')
         .end((err, res) => {
           res.should.have.status(200);
@@ -30,7 +30,7 @@ describe('Users', () => {
     });
 
     it('should get users count', done => {
-      chai.request(app)
+      chai.request(server)
         .get('/api/users/count')
         .end((err, res) => {
           res.should.have.status(200);
@@ -42,7 +42,7 @@ describe('Users', () => {
 
     it('should create new user', done => {
       const user = new User({ username: 'Dave', email: 'dave@example.com', role: 'user' });
-      chai.request(app)
+      chai.request(server)
         .post('/api/user')
         .send(user)
         .end((err, res) => {
@@ -58,7 +58,7 @@ describe('Users', () => {
     it('should get a user by its id', done => {
       const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
       user.save((error, newUser) => {
-        chai.request(app)
+        chai.request(server)
           .get(`/api/user/${newUser.id}`)
           .end((err, res) => {
             res.should.have.status(200);
@@ -75,7 +75,7 @@ describe('Users', () => {
     it('should update a user by its id', done => {
       const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
       user.save((error, newUser) => {
-        chai.request(app)
+        chai.request(server)
           .put(`/api/user/${newUser.id}`)
           .send({ username: 'User 2' })
           .end((err, res) => {
@@ -88,7 +88,7 @@ describe('Users', () => {
     it('should delete a user by its id', done => {
       const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
       user.save((error, newUser) => {
-        chai.request(app)
+        chai.request(server)
           .del(`/api/user/${newUser.id}`)
           .end((err, res) => {
             res.should.have.status(200);
