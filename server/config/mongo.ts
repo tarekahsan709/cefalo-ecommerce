@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+
 import logger from '../util/logger';
 import { MONGODB_TEST_URI, MONGODB_URI, SEED_DB } from './secrets';
 import { Seed } from './Seed';
@@ -19,7 +20,7 @@ function connectDatabase() {
     connection = await mongoose.connection;
   };
 
-  run().catch(error => logger.error(error));
+  run().catch((error) => logger.error(error));
 
   mongoose.connection.on('error', (err) => {
     logger.error('Error connecting to MongoDB: ' + err);
@@ -54,13 +55,15 @@ function getConnectionOption(): object {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   };
 }
 
 function disconnectDatabase(): void {
   connection.close(() => {
-    logger.info('Mongoose default connection disconnected through app termination');
+    logger.info(
+      'Mongoose default connection disconnected through app termination'
+    );
     process.exit(0);
   });
 }

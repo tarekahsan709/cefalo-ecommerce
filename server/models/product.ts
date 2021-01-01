@@ -1,4 +1,5 @@
-import { Document, Schema, Model, model } from 'mongoose';
+import { Document, Model, model, Schema } from 'mongoose';
+
 import { IVariant, variantSchema } from './variant';
 
 export interface IProduct extends Document {
@@ -21,20 +22,20 @@ export const productSchema: Schema = new Schema({
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   available: {
     type: Boolean,
     required: true,
   },
-  variants: [variantSchema]
+  variants: [variantSchema],
 });
 
-
-export const Product: Model<IProduct> = model<IProduct>("Product", productSchema);
-
-
+export const Product: Model<IProduct> = model<IProduct>(
+  'Product',
+  productSchema
+);

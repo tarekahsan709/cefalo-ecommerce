@@ -1,6 +1,7 @@
-import { NextFunction, Request, Response } from "express";
-import * as passport from 'passport';
+import { NextFunction, Request, Response } from 'express';
 import * as jwt from 'jsonwebtoken';
+import * as passport from 'passport';
+
 import { JWT_SECRET } from '../config/secrets';
 
 // FIXME: Refactor return
@@ -8,8 +9,12 @@ import { JWT_SECRET } from '../config/secrets';
  * Attaches the user object to the request if authenticated
  * Otherwise returns undefined
  */
-export function isAuthenticate(req: Request, res: Response, next: NextFunction) {
-  passport.authenticate('jwt', {session: false})(req, res, next);
+export function isAuthenticate(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  passport.authenticate('jwt', { session: false })(req, res, next);
 }
 
 // FIXME: Check sign
@@ -41,4 +46,3 @@ export function formatProfile(user): any {
     token: this.generateAccessToken(user),
   };
 }
-

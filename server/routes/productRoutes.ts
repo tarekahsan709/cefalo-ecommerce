@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { ProductController } from '../controllers/productController';
+
 import { isAuthenticate } from '../auth/authService';
+import { ProductController } from '../controllers/productController';
 
 
 export class ProductRoutes {
-
     public router: Router;
     public productController: ProductController = new ProductController();
 

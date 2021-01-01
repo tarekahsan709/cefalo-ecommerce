@@ -1,4 +1,4 @@
-import { Document, Schema} from "mongoose";
+import { Document, Schema } from 'mongoose';
 
 export interface IVariant extends Document {
   color: string;
@@ -10,7 +10,7 @@ export const variantSchema: Schema = new Schema({
   color: String,
   size: {
     type: [String],
-    enum: ['small','medium', 'large', 'extra-large'],
+    enum: ['small', 'medium', 'large', 'extra-large'],
   },
   quantity: {
     type: Number,
@@ -21,5 +21,3 @@ export const variantSchema: Schema = new Schema({
     },
   },
 });
-
-

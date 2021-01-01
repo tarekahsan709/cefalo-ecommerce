@@ -1,8 +1,8 @@
+import * as cookieParser from 'cookie-parser';
+import * as dotenv from 'dotenv';
 import * as express from 'express';
 import * as morgan from 'morgan';
-import * as dotenv from 'dotenv';
 import * as passport from 'passport';
-import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 
 import { connectDatabase, disconnectDatabase } from './config/mongo';
@@ -13,7 +13,6 @@ import logger from './util/logger';
 const API_BASE_URL = '/api/v1/';
 
 class Server {
-
   public app: express.Application;
 
   constructor() {
@@ -34,7 +33,7 @@ class Server {
     this.app.set('port', process.env.PORT || 3000);
     this.app.use('/', express.static(path.join(__dirname, '../public')));
     this.app.use(express.json());
-    this.app.use(express.urlencoded({extended: false}));
+    this.app.use(express.urlencoded({ extended: false }));
     this.app.use(cookieParser());
 
     if (process.env.NODE_ENV !== 'test') {
@@ -79,7 +78,6 @@ class Server {
       );
     });
   }
-
 }
 
 export const server = new Server();

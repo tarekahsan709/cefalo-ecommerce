@@ -1,5 +1,5 @@
-import * as passportLocal from 'passport-local';
 import * as passportJwt from 'passport-jwt';
+import * as passportLocal from 'passport-local';
 
 import { User } from '../models/user';
 import { JWT_SECRET } from './secrets';
@@ -25,10 +25,10 @@ module.exports = (passport: any) => {
   });
 
   /*
-     * LOCAL SIGNUP
-     * we are using named strategies since we have one for login and one for signup
-     * by default, if there was no name, it would just be called 'local'
-     */
+   * LOCAL SIGNUP
+   * we are using named strategies since we have one for login and one for signup
+   * by default, if there was no name, it would just be called 'local'
+   */
   passport.use(
     'local-signup',
     new LocalStrategy(
@@ -39,7 +39,7 @@ module.exports = (passport: any) => {
       },
       (req: any, email: any, password: any, done: any) => {
         process.nextTick(() => {
-          User.findOne({email}, (err: any, user: any) => {
+          User.findOne({ email }, (err: any, user: any) => {
             if (err) {
               return done(err);
             }
@@ -79,12 +79,14 @@ module.exports = (passport: any) => {
         passReqToCallback: true,
       },
       (req: any, email: any, password: any, done: any) => {
-        User.findOne({email: email.toLowerCase()}, (err, user: any) => {
+        User.findOne({ email: email.toLowerCase() }, (err, user: any) => {
           if (err) {
             return done(err);
           }
           if (!user) {
-            return done(undefined, false, {message: `email ${email} not found.`});
+            return done(undefined, false, {
+              message: `email ${email} not found.`,
+            });
           }
           user.comparePassword(password, (err: Error, isMatch: boolean) => {
             if (err) {
@@ -93,7 +95,9 @@ module.exports = (passport: any) => {
             if (isMatch) {
               return done(undefined, user);
             }
-            return done(undefined, false, {message: 'Invalid username or password.'});
+            return done(undefined, false, {
+              message: 'Invalid username or password.',
+            });
           });
         });
       }
@@ -112,8 +116,7 @@ module.exports = (passport: any) => {
         secretOrKey: JWT_SECRET,
       },
       (jwtPayload: any, done: any, req: any) => {
-
-        User.findOne({_id: jwtPayload._id}, (err: any, user: any) => {
+        User.findOne({ _id: jwtPayload._id }, (err: any, user: any) => {
           if (err) {
             return done(err, false);
           }
@@ -126,4 +129,4 @@ module.exports = (passport: any) => {
       }
     )
   );
-}
+};
