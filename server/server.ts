@@ -12,6 +12,7 @@ import logger from './util/logger';
 
 
 class Server {
+
   public app: express.Application;
 
   constructor() {

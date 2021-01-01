@@ -1,22 +1,40 @@
-import { Document, Schema, Model, model, Error } from "mongoose";
+import { Document, Schema, Model, model } from 'mongoose';
+import { IVariant, variantSchema } from './variant';
 
 export interface IProduct extends Document {
-  productId: String;
-  name: String;
-  price: Number;
-  quantity: Number;
+  id: number;
+  name: string;
+  price: number;
+  available: boolean;
+  variants: IVariant[];
 }
 
-export const productSchema = new Schema({
-  productId: {
-    type: String, required: true,
-    unique: true
+export const productSchema: Schema = new Schema({
+  id: {
+    type: Number,
+    required: true,
+    unique: true,
+    validate: {
+      validator: Number.isInteger,
+      message: '{VALUE} is not an integer value',
+    },
   },
-  name: String,
-  price: Number,
-  quantity: Number
+  name: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  available: {
+    type: Boolean,
+    required: true,
+  },
+  variants: [variantSchema]
 });
 
 
-
 export const Product: Model<IProduct> = model<IProduct>("Product", productSchema);
+
+
