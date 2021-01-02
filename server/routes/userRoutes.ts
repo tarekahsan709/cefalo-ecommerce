@@ -13,5 +13,8 @@ export class UserRoutes {
   routes() {
     this.router.post('/login', this.userController.authenticateUser);
     this.router.post('/register', this.userController.registerUser);
+
+    this.router.get('/',  this.userController.getUsers);
+    this.router.get('/:id', this.userController.getUser);
   }
 }

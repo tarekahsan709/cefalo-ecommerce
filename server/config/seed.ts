@@ -2,19 +2,28 @@ import { Product } from '../models/product';
 import { User } from '../models/user';
 import logger from '../util/logger';
 
-const users = [
+export const testUser =
   {
     name: 'Test User',
     email: 'test@example.com',
     password: 'test',
-  },
+  };
+
+export const testUserWrongPass =
+  {
+    name: 'Test User',
+    email: 'test@example.com',
+    password: 'wrong',
+  };
+
+export const users = [
   {
     name: 'Admin',
     email: 'admin@example.com',
     password: 'admin',
   },
 ];
-const products = [
+export const products = [
   {
     id: 1,
     name: 'Towel Multifold',

@@ -1,103 +1,96 @@
 import * as chai from 'chai';
+import { after, before, describe, it } from 'mocha';
 import chaiHttp = require('chai-http');
-import { describe, it } from 'mocha';
+
+import * as server from '../server';
 
 import { User } from '../models/user';
-import { server } from '../server';
+import { testUser, testUserWrongPass } from '../config/seed';
 
 process.env.NODE_ENV = 'test';
-chai.use(chaiHttp).should();
 
-describe('Users', () => {
+const expect = chai.expect;
+chai.use(chaiHttp);
 
-  beforeEach(done => {
-    User.remove({}, err => {
+
+describe("POST /register", () => {
+
+  before(function (done) {
+    User.deleteMany({}, (err) => {
       done();
     });
   });
 
-  describe('Backend tests for users', () => {
-
-    it('should get all the users', done => {
-      chai.request(server)
-        .get('/api/users')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('array');
-          res.body.length.should.be.eql(0);
-          done();
-        });
+  after(function (done) {
+    User.deleteMany({}, (err) => {
+      done();
     });
+  });
 
-    it('should get users count', done => {
-      chai.request(server)
-        .get('/api/users/count')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('number');
-          res.body.should.be.eql(0);
-          done();
-        });
-    });
-
-    it('should create new user', done => {
-      const user = new User({ username: 'Dave', email: 'dave@example.com', role: 'user' });
-      chai.request(server)
-        .post('/api/user')
-        .send(user)
-        .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.be.a('object');
-          res.body.should.have.a.property('username');
-          res.body.should.have.a.property('email');
-          res.body.should.have.a.property('role');
-          done();
-        });
-    });
-
-    it('should get a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(server)
-          .get(`/api/user/${newUser.id}`)
-          .end((err, res) => {
-            res.should.have.status(200);
-            res.body.should.be.a('object');
-            res.body.should.have.property('username');
-            res.body.should.have.property('email');
-            res.body.should.have.property('role');
-            res.body.should.have.property('_id').eql(newUser.id);
-            done();
-          });
+  it('should register a new user with valid parameters', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.have.property('id');
+        expect(res.body).to.have.property('email');
+        expect(res.body).to.have.property('token');
+        done();
       });
-    });
+  });
 
-    it('should update a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(server)
-          .put(`/api/user/${newUser.id}`)
-          .send({ username: 'User 2' })
-          .end((err, res) => {
-            res.should.have.status(200);
-            done();
-          });
+  it('should return some defined error message with valid parameters', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser)
+      .end(function (err, res) {
+        expect(res.status).to.equal(400);
+        done();
       });
-    });
-
-    it('should delete a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(server)
-          .del(`/api/user/${newUser.id}`)
-          .end((err, res) => {
-            res.should.have.status(200);
-            done();
-          });
-      });
-    });
   });
 
 });
 
+describe("POST /login", () => {
 
+  before(function (done) {
+    chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser)
+      .end((err, res) => {
+        done();
+      });
+  });
+
+  it('should get a log in user', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/users/login')
+      .send(testUser)
+      .end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.have.property('id');
+        expect(res.body).to.have.property('email');
+        expect(res.body).to.have.property('token');
+        done();
+      });
+  });
+
+  it('should return error with error message ', (done) => {
+    chai
+      .request(server)
+      .post('/api/v1/users/login')
+      .send(testUserWrongPass)
+      .end(function (err, res) {
+        expect(res.status).to.equal(401);
+        done();
+      });
+  });
+
+});

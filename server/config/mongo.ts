@@ -27,15 +27,17 @@ function connectDatabase() {
   });
 
   mongoose.connection.once('open', async () => {
-    logger.info('We have connected to mongodb');
+    if (process.env.NODE_ENV != 'test'){
+      logger.info('Database has connected');
+    }
     if (SEED_DB) {
-      logger.info('Db seed true');
-      await runDbSeed();
+      // logger.info('Db seed true');
+      // await runDbSeed();
     }
   });
 }
 
-async function runDbSeed(): Promise<void> {
+export async function runDbSeed(): Promise<void> {
   const seed = new Seed();
   await seed.seedUsers();
   await seed.seedProducts();

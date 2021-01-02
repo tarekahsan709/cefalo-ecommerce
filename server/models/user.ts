@@ -9,7 +9,7 @@ type comparePasswordFunction = (
 type generateHash = (password: string) => string;
 
 export interface IUser extends Document {
-  name: string;
+  name?: string;
   email: string;
   password: string;
   comparePassword: comparePasswordFunction;
@@ -17,9 +17,10 @@ export interface IUser extends Document {
 }
 
 export const userSchema: Schema = new Schema({
+  // FIXME: Check required
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   email: {
     type: String,

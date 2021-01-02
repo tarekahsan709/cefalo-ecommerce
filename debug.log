@@ -126,3 +126,351 @@
 {"message":"Db seed true","level":"info"}
 {"message":"Finished populating users","level":"info"}
 {"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (net.js:1301:14)\n    at listenInCluster (net.js:1349:12)\n    at Server.listen (net.js:1437:7)\n    at Function.listen (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\express\\lib\\application.js:618:24)\n    at Server.start (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:65:18)\n    at Object.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:71:16)\n    at Module._compile (internal/modules/cjs/loader.js:959:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)\n    at Module.load (internal/modules/cjs/loader.js:815:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:727:14)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:1047:10)\n    at internal/main/run_main_module.js:17:11","level":"error"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"SIGINT: Closing MongoDB connection","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (net.js:1301:14)\n    at listenInCluster (net.js:1349:12)\n    at Server.listen (net.js:1437:7)\n    at Function.listen (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\express\\lib\\application.js:618:24)\n    at Server.start (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:65:18)\n    at Object.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:71:16)\n    at Module._compile (internal/modules/cjs/loader.js:959:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)\n    at Module.load (internal/modules/cjs/loader.js:815:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:727:14)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:1047:10)\n    at internal/main/run_main_module.js:17:11","level":"error"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Error: listen EADDRINUSE: address already in use :::3000\n    at Server.setupListenHandle [as _listen2] (net.js:1301:14)\n    at listenInCluster (net.js:1349:12)\n    at Server.listen (net.js:1437:7)\n    at Function.listen (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\express\\lib\\application.js:618:24)\n    at Server.start (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:65:18)\n    at Object.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\server.js:71:16)\n    at Module._compile (internal/modules/cjs/loader.js:959:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)\n    at Module.load (internal/modules/cjs/loader.js:815:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:727:14)\n    at Function.Module.runMain (internal/modules/cjs/loader.js:1047:10)\n    at internal/main/run_main_module.js:17:11","level":"error"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"SIGINT: Closing MongoDB connection","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"name":"BulkWriteError","driver":true,"code":11000,"writeErrors":[{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","op":{"_id":"5ff077868aa3f562e8026238","name":"Test User","email":"test@example.com","password":"test","__v":0,"createdAt":"2021-01-02T13:39:18.043Z","updatedAt":"2021-01-02T13:39:18.043Z"}}],"result":{"ok":1,"writeErrors":[{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","op":{"_id":"5ff077868aa3f562e8026238","name":"Test User","email":"test@example.com","password":"test","__v":0,"createdAt":"2021-01-02T13:39:18.043Z","updatedAt":"2021-01-02T13:39:18.043Z"}}],"writeConcernErrors":[],"insertedIds":[{"index":0,"_id":"5ff077868aa3f562e8026238"},{"index":1,"_id":"5ff077868aa3f562e8026239"}],"nInserted":0,"nUpserted":0,"nMatched":0,"nModified":0,"nRemoved":0,"upserted":[]},"insertedDocs":[{"_id":"5ff077868aa3f562e8026239","name":"Admin","email":"admin@example.com","password":"admin","__v":0,"createdAt":"2021-01-02T13:39:18.043Z","updatedAt":"2021-01-02T13:39:18.043Z"}],"level":"error","message":"Error populating user E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","stack":"BulkWriteError: E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }\n    at OrderedBulkOperation.handleWriteError (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\bulk\\common.js:1257:9)\n    at resultHandler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\bulk\\common.js:521:23)\n    at handler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:942:24)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:558:5)\n    at MessageStream.messageHandler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\connection.js:277:5)\n    at MessageStream.emit (events.js:210:5)\n    at processIncomingData (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at doWrite (_stream_writable.js:431:12)\n    at writeOrBuffer (_stream_writable.js:415:5)\n    at MessageStream.Writable.write (_stream_writable.js:305:11)\n    at Socket.ondata (_stream_readable.js:727:22)\n    at Socket.emit (events.js:210:5)\n    at addChunk (_stream_readable.js:309:12)\n    at readableAddChunk (_stream_readable.js:290:11)\n    at Socket.Readable.push (_stream_readable.js:224:10)\n    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"name":"BulkWriteError","driver":true,"code":11000,"writeErrors":[{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","op":{"_id":"5ff077a6146bcc33803fea95","name":"Test User","email":"test@example.com","password":"test","__v":0,"createdAt":"2021-01-02T13:39:50.823Z","updatedAt":"2021-01-02T13:39:50.823Z"}}],"result":{"ok":1,"writeErrors":[{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","op":{"_id":"5ff077a6146bcc33803fea95","name":"Test User","email":"test@example.com","password":"test","__v":0,"createdAt":"2021-01-02T13:39:50.823Z","updatedAt":"2021-01-02T13:39:50.823Z"}}],"writeConcernErrors":[],"insertedIds":[{"index":0,"_id":"5ff077a6146bcc33803fea95"},{"index":1,"_id":"5ff077a6146bcc33803fea96"}],"nInserted":0,"nUpserted":0,"nMatched":0,"nModified":0,"nRemoved":0,"upserted":[]},"insertedDocs":[{"_id":"5ff077a6146bcc33803fea96","name":"Admin","email":"admin@example.com","password":"admin","__v":0,"createdAt":"2021-01-02T13:39:50.823Z","updatedAt":"2021-01-02T13:39:50.823Z"}],"level":"error","message":"Error populating user E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }","stack":"BulkWriteError: E11000 duplicate key error collection: cefalolab-ecommerce.users index: email_1 dup key: { email: \"test@example.com\" }\n    at OrderedBulkOperation.handleWriteError (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\bulk\\common.js:1257:9)\n    at resultHandler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\bulk\\common.js:521:23)\n    at handler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\core\\sdam\\topology.js:942:24)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:350:13\n    at handleOperationResult (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\core\\sdam\\server.js:558:5)\n    at MessageStream.messageHandler (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\connection.js:277:5)\n    at MessageStream.emit (events.js:210:5)\n    at processIncomingData (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:144:12)\n    at MessageStream._write (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:42:5)\n    at doWrite (_stream_writable.js:431:12)\n    at writeOrBuffer (_stream_writable.js:415:5)\n    at MessageStream.Writable.write (_stream_writable.js:305:11)\n    at Socket.ondata (_stream_readable.js:727:22)\n    at Socket.emit (events.js:210:5)\n    at addChunk (_stream_readable.js:309:12)\n    at readableAddChunk (_stream_readable.js:290:11)\n    at Socket.Readable.push (_stream_readable.js:224:10)\n    at TCP.onStreamRead (internal/stream_base_commons.js:182:23)"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"AssertionError: expected { users: [] } to be an array\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:20:36\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"TypeError: Cannot read property 'should' of undefined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:22:33\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"AssertionError: expected 0 to deeply equal 2\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:21:49\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"AssertionError: expected 0 to deeply equal 2\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:21:49\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"AssertionError: expected { Object (users) } to be an array\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:22:36\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"AssertionError: expected 2 to deeply equal 0\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:49\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"TypeError: Cannot read property 'should' of undefined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:33\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"AssertionError: expected {} to have property 'id'\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:20:36\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Finished populating products","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected {} to have property 'id'\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:19:36\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:18:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:18:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}
+{"message":"SIGINT: Closing MongoDB connection","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:19:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:24:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Db seed true","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:24:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 403\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:24:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:21:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:21:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:20:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:20:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:25:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:21:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"ReferenceError: expect is not defined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:23:13\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"ReferenceError: expect is not defined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:37:13\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 400\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:30:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 400 but got 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:44:29\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"ReferenceError: expect is not defined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:29:13\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"ReferenceError: expect is not defined\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\users.spec.js:44:13\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"We have connected to mongodb","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}

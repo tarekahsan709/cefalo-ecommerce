@@ -80,6 +80,7 @@ class Server {
   }
 }
 
-export const server = new Server();
-
+const server = new Server();
 server.start();
+
+module .exports = server.app;
