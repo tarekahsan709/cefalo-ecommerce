@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import { after, before, describe, it } from 'mocha';
+import { after, before, it } from 'mocha';
 import chaiHttp = require('chai-http');
 
 import * as server from '../server';
@@ -15,82 +15,68 @@ chai.use(chaiHttp);
 
 describe("POST /register", () => {
 
-  before(function (done) {
-    User.deleteMany({}, (err) => {
-      done();
-    });
+  before(async function () {
+    await User.deleteMany({});
   });
 
-  after(function (done) {
-    User.deleteMany({}, (err) => {
-      done();
-    });
+  after(async function () {
+    await User.deleteMany({});
   });
 
-  it('should register a new user with valid parameters', (done) => {
-    chai
+  it('should register a new user with valid parameters', async function () {
+    const res = await chai
       .request(server)
       .post('/api/v1/users/register')
-      .send(testUser)
-      .end((err, res) => {
-        expect(res.status).to.equal(200);
-        expect(res.body).to.be.a('object');
-        expect(res.body).to.have.property('id');
-        expect(res.body).to.have.property('email');
-        expect(res.body).to.have.property('token');
-        done();
-      });
+      .send(testUser);
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.be.a('object');
+    expect(res.body).to.have.property('id');
+    expect(res.body).to.have.property('email');
+    expect(res.body).to.have.property('token');
   });
 
-  it('should return some defined error message with valid parameters', (done) => {
-    chai
+  it('should return some defined error message with valid parameters', async function () {
+    const res = await chai
       .request(server)
       .post('/api/v1/users/register')
-      .send(testUser)
-      .end(function (err, res) {
-        expect(res.status).to.equal(400);
-        done();
-      });
+      .send(testUser);
+
+    expect(res.status).to.equal(400);
   });
 
 });
 
 describe("POST /login", () => {
 
-  before(function (done) {
-    chai
+  before(async function () {
+    const res = await chai
       .request(server)
       .post('/api/v1/users/register')
-      .send(testUser)
-      .end((err, res) => {
-        done();
-      });
+      .send(testUser);
   });
 
-  it('should get a log in user', (done) => {
-    chai
+  it('should get a log in user', async function () {
+    const res = await chai
       .request(server)
       .post('/api/v1/users/login')
-      .send(testUser)
-      .end((err, res) => {
-        expect(res.status).to.equal(200);
-        expect(res.body).to.be.a('object');
-        expect(res.body).to.have.property('id');
-        expect(res.body).to.have.property('email');
-        expect(res.body).to.have.property('token');
-        done();
-      });
+      .send(testUser);
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.be.a('object');
+    expect(res.body).to.have.property('id');
+    expect(res.body).to.have.property('email');
+    expect(res.body).to.have.property('token');
+
   });
 
-  it('should return error with error message ', (done) => {
-    chai
+  it('should return error with error message ', async function () {
+    const res = await chai
       .request(server)
       .post('/api/v1/users/login')
-      .send(testUserWrongPass)
-      .end(function (err, res) {
-        expect(res.status).to.equal(401);
-        done();
-      });
+      .send(testUserWrongPass);
+
+    expect(res.status).to.equal(401);
   });
 
 });

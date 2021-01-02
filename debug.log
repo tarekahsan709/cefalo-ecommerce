@@ -474,3 +474,226 @@
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Using .env file to supply config environment variables","level":"debug"}
 {"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 404 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:42:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 404 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:40:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 404 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:36:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 404 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:37:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 500 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:37:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:37:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:38:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:38:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:42:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:43:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:40:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:40:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:42:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 500 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:39:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:44:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:40:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:40:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 401 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:41:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"AssertionError: expected 500 to equal 200\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\dist\\server\\test\\producs.spec.js:41:35\n    at Test.Request.callback (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:716:12)\n    at C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\index.js:916:18\n    at IncomingMessage.<anonymous> (C:\\Users\\Hello\\jeeonFun\\assignment-cefalo\\Angular-Full-Stack\\node_modules\\superagent\\lib\\node\\parsers\\json.js:19:7)\n    at IncomingMessage.emit (events.js:215:7)\n    at endReadableNT (_stream_readable.js:1184:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
