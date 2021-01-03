@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
@@ -6,13 +6,12 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements AfterViewChecked {
+export class NavbarComponent  {
+  isLoggedIn: boolean;
 
-  constructor(public auth: AuthService,
-              private changeDetector: ChangeDetectorRef) { }
-
-  ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
+  constructor(public auth: AuthService) {
+    this.auth.loggedIn.subscribe( isLoggedIn => this.isLoggedIn = isLoggedIn);
   }
+
 
 }

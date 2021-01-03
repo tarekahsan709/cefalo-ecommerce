@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { UserService } from '../../shared/services/user.service';
 import { ToastComponent } from '../../shared/toast/toast.component';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -23,10 +24,19 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6)
   ]);
 
+  isLoggedIn: boolean;
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public toast: ToastComponent,
-              private userService: UserService) { }
+              private userService: UserService,
+              private auth: AuthService) {
+    this.auth.loggedIn.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn
+      if (this.isLoggedIn)
+        this.router.navigate(['/product'])
+    });
+  }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -36,19 +46,18 @@ export class RegisterComponent implements OnInit {
   }
 
   setClassEmail(): object {
-    return { 'has-danger': !this.email.pristine && !this.email.valid };
+    return {'has-danger': !this.email.pristine && !this.email.valid};
   }
 
   setClassPassword(): object {
-    return { 'has-danger': !this.password.pristine && !this.password.valid };
+    return {'has-danger': !this.password.pristine && !this.password.valid};
   }
 
   register(): void {
     this.userService.register(this.registerForm.value).subscribe(
       res => {
-        console.log('Response on registration', res);
         this.toast.setMessage('you successfully registered!', 'success');
-        this.router.navigate(['/account/login']);
+        this.router.navigate(['/login']);
       },
       error => this.toast.setMessage('email already exists', 'danger')
     );

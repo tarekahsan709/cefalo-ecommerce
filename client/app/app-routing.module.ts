@@ -8,24 +8,25 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'product',
     loadChildren: () =>
       import('./product/product.module').then((module) => module.ProductModule),
+    canActivate: [AuthGuardLogin]
   },
   {
-    path: 'account',
+    path: '',
     loadChildren: () =>
       import('./account/account.module').then((module) => module.AccountModule),
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 

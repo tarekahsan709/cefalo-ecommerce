@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
+import { CartCounterComponent } from './cart-counter/cart-counter.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, HttpClientModule],
@@ -21,11 +22,13 @@ import { ProductService } from './services/product.service';
     ReactiveFormsModule,
     // Shared Components
     ToastComponent,
-    LoadingComponent
+    LoadingComponent,
+    CartCounterComponent
   ],
   declarations: [
     ToastComponent,
-    LoadingComponent
+    LoadingComponent,
+    CartCounterComponent
   ],
   providers: [
     AuthService,

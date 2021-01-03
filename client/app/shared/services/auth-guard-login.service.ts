@@ -5,10 +5,14 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class AuthGuardLogin implements CanActivate {
 
-  constructor(public auth: AuthService) {}
+  isLoggedIn: boolean;
+
+  constructor(public auth: AuthService) {
+    this.auth.loggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
+  }
 
   canActivate(): boolean {
-    return this.auth.loggedIn;
+    return this.isLoggedIn;
   }
 
 }

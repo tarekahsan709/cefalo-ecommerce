@@ -35,7 +35,6 @@ describe('Component: Logout', () => {
   });
 
   it('should logout the user', () => {
-    authService.loggedIn = true;
     expect(authService.loggedIn).toBeTruthy();
     authService.logout();
     expect(authService.loggedIn).toBeFalsy();

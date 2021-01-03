@@ -23,15 +23,21 @@ export class LoginComponent implements OnInit {
     Validators.minLength(4)
   ]);
 
+  isLoggedIn: boolean;
+
   constructor(private auth: AuthService,
               private formBuilder: FormBuilder,
               private router: Router,
-              public toast: ToastComponent) { }
+              public toast: ToastComponent) {
+    this.auth.loggedIn.subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn
+      if (this.isLoggedIn)
+        this.router.navigate(['/product'])
+    });
+
+  }
 
   ngOnInit(): void {
-    if (this.auth.loggedIn) {
-      this.router.navigate(['/products']);
-    }
     this.loginForm = this.formBuilder.group({
       email: this.email,
       password: this.password
@@ -39,11 +45,11 @@ export class LoginComponent implements OnInit {
   }
 
   setClassEmail(): object {
-    return { 'has-danger': !this.email.pristine && !this.email.valid };
+    return {'has-danger': !this.email.pristine && !this.email.valid};
   }
 
   setClassPassword(): object {
-    return { 'has-danger': !this.password.pristine && !this.password.valid };
+    return {'has-danger': !this.password.pristine && !this.password.valid};
   }
 
   login(): void {
