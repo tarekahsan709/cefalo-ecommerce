@@ -2,7 +2,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { AuthService } from './services/auth.service';
+import { AuthService } from './shared/services/auth.service';
 import { AppComponent } from './app.component';
 
 class AuthServiceMock { }

@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 import { ToastComponent } from './toast/toast.component';
 import { LoadingComponent } from './loading/loading.component';
 
+import { AuthService } from './services/auth.service';
+import { AuthGuardLogin } from './services/auth-guard-login.service';
+import { UserService } from './services/user.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   exports: [
-    // Shared Modules
-    BrowserModule,
+    RouterModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     // Shared Components
     ToastComponent,
     LoadingComponent
@@ -28,7 +27,11 @@ import { LoadingComponent } from './loading/loading.component';
     LoadingComponent
   ],
   providers: [
+    AuthService,
+    AuthGuardLogin,
+    UserService,
     ToastComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

@@ -23,16 +23,12 @@ export function isAuthenticate(
  */
 export function generateAccessToken(user): any {
   return jwt.sign(
-    {
-      _id: user._id,
-      name: user.name,
-      email: user.email,
-    },
+    user,
     JWT_SECRET,
-    {
-      expiresIn: '3d',
-      issuer: user._id.toString(),
-    }
+    // {
+    //   expiresIn: '3d',
+    //   issuer: user._id.toString(),
+    // }
   );
 }
 /**
@@ -40,9 +36,9 @@ export function generateAccessToken(user): any {
  */
 export function formatProfile(user): any {
   return {
-    id: user._id,
-    name: user.name,
-    email: user.email,
+    // id: user._id,
+    // name: user.name,
+    // email: user.email,
     token: this.generateAccessToken(user),
   };
 }

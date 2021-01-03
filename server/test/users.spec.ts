@@ -31,8 +31,6 @@ describe("POST /register", () => {
 
     expect(res.status).to.equal(200);
     expect(res.body).to.be.a('object');
-    expect(res.body).to.have.property('id');
-    expect(res.body).to.have.property('email');
     expect(res.body).to.have.property('token');
   });
 
@@ -64,8 +62,6 @@ describe("POST /login", () => {
 
     expect(res.status).to.equal(200);
     expect(res.body).to.be.a('object');
-    expect(res.body).to.have.property('id');
-    expect(res.body).to.have.property('email');
     expect(res.body).to.have.property('token');
 
   });

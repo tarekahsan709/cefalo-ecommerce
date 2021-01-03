@@ -4,13 +4,12 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { UserService } from './user.service';
-import { ToastComponent } from '../shared/toast/toast.component';
-import { User } from '../shared/models/user.model';
+import { ToastComponent } from '../toast/toast.component';
+import { User } from '../models/user.model';
 
 @Injectable()
 export class AuthService {
   loggedIn = false;
-  isAdmin = false;
 
   currentUser: User = new User();
 
@@ -41,22 +40,18 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
     this.loggedIn = false;
-    this.isAdmin = false;
     this.currentUser = new User();
     this.router.navigate(['/']);
   }
 
   decodeUserFromToken(token): object {
-    return this.jwtHelper.decodeToken(token).user;
+    return this.jwtHelper.decodeToken(token);
   }
 
   setCurrentUser(decodedUser): void {
     this.loggedIn = true;
-    this.currentUser._id = decodedUser._id;
-    this.currentUser.username = decodedUser.username;
-    this.currentUser.role = decodedUser.role;
-    this.isAdmin = decodedUser.role === 'admin';
-    delete decodedUser.role;
+    this.currentUser.id = decodedUser._id;
+    this.currentUser.email = decodedUser.email;
   }
 
 }

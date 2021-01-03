@@ -1,5 +1,5 @@
 import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
