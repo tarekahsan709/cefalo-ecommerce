@@ -1,5 +1,4 @@
-import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { AuthService } from './shared/services/auth.service';
+import { AfterViewChecked, Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,9 @@ import { AuthService } from './shared/services/auth.service';
 })
 export class AppComponent implements AfterViewChecked {
 
-  constructor(public auth: AuthService,
-              private changeDetector: ChangeDetectorRef) { }
+  constructor() { }
 
   ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
   }
 
 }

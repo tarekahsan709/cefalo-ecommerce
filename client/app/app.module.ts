@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { SharedModule } from './shared/shared.module';
 import { AccountModule } from './account/account.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AccountModule } from './account/account.module';
     AppRoutingModule,
     AccountModule,
     SharedModule,
+    CoreModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: (): string => localStorage.getItem('token'),
