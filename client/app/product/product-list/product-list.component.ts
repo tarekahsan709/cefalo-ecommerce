@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { IProduct } from '../../shared/models/product.model';
+import { ToastComponent } from '../../shared/toast/toast.component';
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +12,8 @@ export class ProductListComponent implements OnInit {
 
   products: IProduct[];
 
-  constructor(private productSvc: ProductService) {
+  constructor(private productSvc: ProductService,
+              public toast: ToastComponent) {
   }
 
   ngOnInit(): void {
@@ -21,10 +23,10 @@ export class ProductListComponent implements OnInit {
   getProducts(): void {
     this.productSvc.getProducts().subscribe(
       (data) => {
-        this.products = data['products'];
-        console.log('Product', this.products);
-      }
-    );
+        this.products = data.products;
+      },
+      (err: any) => this.toast.setMessage('invalid email or password!', 'danger'),
+      () => this.toast.setMessage('All products loaded', 'success'));
   }
 
 }

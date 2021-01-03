@@ -4,6 +4,10 @@ export interface IVariant {
   quantity: number;
 }
 
+export interface IProductResults {
+  products: IProduct[];
+}
+
 export interface IProduct {
   id: string;
   name: string;

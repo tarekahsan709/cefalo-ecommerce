@@ -34,11 +34,9 @@ export class AuthService {
   login(emailAndPassword): void {
     this.userService.login(emailAndPassword).subscribe(
       res => {
-        console.log(res);
         localStorage.setItem('token', res.token);
         const decodedUser = this.decodeUserFromToken(res.token);
         this.setCurrentUser(decodedUser);
-        this.loggedInSubject.next(true);
         this.router.navigate(['product']);
       },
       error => this.toast.setMessage('invalid email or password!', 'danger')
@@ -49,7 +47,7 @@ export class AuthService {
     localStorage.removeItem('token');
     this.loggedInSubject.next(false);
     this.currentUser = new IUser();
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
   decodeUserFromToken(token): object {
