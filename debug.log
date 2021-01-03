@@ -722,3 +722,17 @@
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Using .env file to supply config environment variables","level":"debug"}
 {"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Database has connected","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Database has connected","level":"info"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"level":"info","message":"API is running at http://localhost:%d"}
+{"message":"Database has connected","level":"info"}
+{"message":"Finished populating users","level":"info"}
+{"message":"Finished populating products","level":"info"}

@@ -8,17 +8,18 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () =>
+      import('./product/product.module').then((module) => module.ProductModule),
+  },
+  {
     path: 'account',
     loadChildren: () =>
       import('./account/account.module').then((module) => module.AccountModule),
   },
   {
-    path: 'notfound',
-    component: NotFoundComponent
-  },
-  {
     path: '**',
-    redirectTo: 'not-found',
+    redirectTo: '',
     pathMatch: 'full'
   }
 ];

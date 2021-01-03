@@ -10,6 +10,7 @@ import { UserService } from './services/user.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   imports: [CommonModule, RouterModule, HttpClientModule],
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     AuthService,
     AuthGuardLogin,
     UserService,
+    ProductService,
     ToastComponent
   ]
 })

@@ -1,4 +1,4 @@
-export class User {
+export class IUser {
   // tslint:disable-next-line: variable-name
   id?: string;
   email: string;

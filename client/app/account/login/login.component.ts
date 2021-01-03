@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ]);
   password = new FormControl('', [
     Validators.required,
-    Validators.minLength(6)
+    Validators.minLength(4)
   ]);
 
   constructor(private auth: AuthService,
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.auth.loggedIn) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/products']);
     }
     this.loginForm = this.formBuilder.group({
       email: this.email,

@@ -2,7 +2,7 @@
 
 *.seed
 *.log
-*debug.log
+debug.log
 # compiled output
 /dist
 /tmp
