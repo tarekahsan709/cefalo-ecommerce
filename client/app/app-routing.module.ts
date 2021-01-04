@@ -21,6 +21,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'cart',
+    loadChildren: () =>
+      import('./cart/cart.module').then((module) => module.CartModule),
+    // canActivate: [AuthGuard]
+  },
+  {
     path: '**',
     redirectTo: '/account/login',
     pathMatch: 'full'
