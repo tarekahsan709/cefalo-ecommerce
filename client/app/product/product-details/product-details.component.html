@@ -15,7 +15,7 @@
           </div>
           <div class="col-12 col-sm-8 col-md-6 col-lg-6">
             <label>Select Size </label>
-            <select class="custom-select mr-1" required>
+            <select class="custom-select mr-1" (change)="onChangeSize($event.target.value)" [(ngModel)]="selectedSize">
               <option *ngFor="let size of selectedSizeList">{{size}}</option>
             </select>
           </div>

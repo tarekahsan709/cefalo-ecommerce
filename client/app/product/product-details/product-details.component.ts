@@ -50,12 +50,14 @@ export class ProductDetailsComponent implements OnInit {
       this.selectedVariant = this.variants[0];
       this.selectedColor = this.selectedVariant.color;
       this.selectedSizeList = this.selectedVariant.size;
+      this.selectedSize = this.selectedSizeList[0];
     }
   }
 
   onChangeColor(color): void {
     this.selectedColor = color;
     this.selectedSizeList = this.variants.find(v => v.color === color).size;
+    this.selectedSize = this.selectedSizeList[0];
   }
 
   onChangeSize(size): void {
@@ -72,6 +74,8 @@ export class ProductDetailsComponent implements OnInit {
       variantSize: this.selectedSize,
       quantity: this.defaultQuantity
     };
+    console.log("Cart Item", cartItem);
+
     this.cartSvc.addToCart(cartItem);
     this.toast.setMessage(
       'Products has added to cart! Please go to cart for checkout', 'success');
