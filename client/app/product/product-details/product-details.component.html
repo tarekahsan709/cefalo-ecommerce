@@ -3,22 +3,27 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">{{product.name}}</h4>
-        <h6 class="badge badge-success">Available</h6>
-        <p class="card-text">
-          <input [(ngModel)]="quantity" class="form-control" id="quantity" max="100" min="1" name="quantity"
-                 type="number" placeholder="Enter product quantity">
-        </p>
-        <div class="options d-flex flex-fill">
-          <select class="custom-select mr-1" required>
-            <option *ngFor="let variant of product.variants">{{variant.color}}</option>
-          </select>
-          <select class="custom-select mr-1" required>
-            <option *ngFor="let variant of product.variants">{{variant.size}}</option>
-          </select>
+        <h6 class="badge badge-success" *ngIf="product.available">Available</h6>
+        <h6 class="badge badge-danger" *ngIf="!product.available">Unavailable</h6>
+        <div class="">
+          <div class="form-group">
+            <label>Select Color
+              <select class="custom-select mr-1" (change)="onChangeColor($event.target.value)" [(ngModel)]="selectedColor">
+                <option *ngFor="let variant of variants">{{variant.color}}</option>
+              </select>
+            </label>
+
+            <label *ngIf="selectedSizeList">Select Size
+              <select class="custom-select mr-1" required>
+                <option *ngFor="let size of selectedSizeList">{{size}}</option>
+              </select>
+            </label>
+          </div>
         </div>
         <div class="buy d-flex justify-content-between align-items-center">
-          <div class="price text-dark"><h5 class="mt-4">Price {{ product.price | currency:'BDT' :'symbol-narrow'}}</h5></div>
-          <a href="#" class="btn btn-success mt-3"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+          <div class="price text-dark"><h5 class="mt-4">Price {{ product.price | currency:'BDT' :'symbol-narrow'}}</h5>
+          </div>
+          <button class="btn btn-success mt-3" [disabled]="!product.available" ><i class="fa fa-shopping-cart"></i> Add to Cart</button>
         </div>
       </div>
     </div>

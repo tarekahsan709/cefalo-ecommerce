@@ -4,6 +4,12 @@ export interface IVariant {
   quantity: number;
 }
 
+export const DEFAULT_VARIANT: IVariant = {
+  color: null,
+  size: [],
+  quantity: 0
+};
+
 export interface IProductResults {
   products: IProduct[];
 }

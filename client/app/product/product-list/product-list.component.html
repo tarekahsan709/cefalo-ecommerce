@@ -4,13 +4,11 @@
       <div class="card-body">
         <h4 class="card-title">{{product.name}}</h4>
         <p class="card-text"></p>
-        <div>
-          <button class="btn btn-sm btn-outline-dark mt-3 float-right" [disabled]="!product.available"
-                  routerLink="{{product.id}}">Add to Cart
-          </button>
+        <div class="">
+          <button class="btn btn-sm btn-outline-dark mt-3 float-right"[disabled]="!product.available"  routerLink="{{product.id}}">Add to Cart</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<app-toast [message]="toast.message"></app-toast>
+<!--<app-toast [message]="toast.message"></app-toast>-->

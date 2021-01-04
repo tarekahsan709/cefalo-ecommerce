@@ -32,7 +32,7 @@ function connectDatabase() {
     }
     if (SEED_DB) {
       // logger.info('Db seed true');
-      await runDbSeed();
+      // await runDbSeed();
     }
   });
 }
