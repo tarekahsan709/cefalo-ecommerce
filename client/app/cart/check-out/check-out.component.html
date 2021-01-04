@@ -115,6 +115,14 @@
         <input class="totals-value mt-2" [disabled]="true" type="text" value='Total: {{ getTotalPrice() }} Taka' />
       </div>
     </div>
-    <button class="btn btn-success btn-lg float-right">Checkout</button>
+    <button class="btn btn-success btn-lg float-right" (click)="onCheckout(template)">Checkout</button>
   </div>
 </div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>
