@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastComponent } from '../../shared/toast/toast.component';
 import { ProductService } from '../../shared/services/product.service';
 import { IProduct, IVariant } from '../../shared/models/product.model';
+import { ICartItem } from '../../shared/models/cart.model';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -21,7 +23,9 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private toast: ToastComponent,
-              private productSvc: ProductService) {
+              private productSvc: ProductService,
+              private cartSvc: CartService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,10 +37,9 @@ export class ProductDetailsComponent implements OnInit {
     this.productSvc.getProductById(id).subscribe(
       (data) => {
         this.product = data;
-        console.log(this.product);
         this.loadDefaultVariant();
       },
-      (err: any) => this.toast.setMessage('Product retrieved failed!', 'danger'),
+      (err: any) => this.toast.setMessage('Failed to retrieve product!', 'danger'),
       () => this.toast.setMessage('Product details has loaded', 'success'));
   }
 
@@ -51,15 +54,28 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onChangeColor(color): void {
-    this.selectedColor =  color;
-    this.selectedSizeList = this.variants.find( v => v.color === color).size;
-    console.log("Selected color", color);
-    console.log("Selected color sizeList", this.selectedSizeList);
+    this.selectedColor = color;
+    this.selectedSizeList = this.variants.find(v => v.color === color).size;
   }
 
   onChangeSize(size): void {
     this.selectedSize = size;
-    console.log("Selected size", size);
+  }
+
+  addToCart(): void {
+    const cartItem: ICartItem = {
+      id: Math.floor(Math.random() * 1000000),
+      productId: this.product.id,
+      productPrice: this.product.price,
+      productName: this.product.name,
+      variantColor: this.selectedColor,
+      variantSize: this.selectedSize,
+      quantity: this.defaultQuantity
+    };
+    this.cartSvc.addToCart(cartItem);
+    this.toast.setMessage(
+      'Products has added to cart! Please go to cart for checkout', 'success');
+    this.router.navigate(['/product']);
   }
 
 }
