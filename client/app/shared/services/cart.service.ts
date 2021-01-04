@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { DEFAULT_CART, ICart, ICartItem } from '../models/cart.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  public hasCartUpdated: BehaviorSubject<boolean>;
 
   constructor() {
+    this.hasCartUpdated = new BehaviorSubject<boolean>(true);
   }
 
   addToCart(cartItem: ICartItem): void {
@@ -15,6 +18,7 @@ export class CartService {
     // FIXME: handle QuotaExceededError
     // FIXME: Move key name to constant
     localStorage.setItem('cart', JSON.stringify(currentCart));
+    this.hasCartUpdated.next(true);
   }
 
   getCurrentCart(): ICart {
@@ -27,13 +31,19 @@ export class CartService {
     return currentCart;
   }
 
-  getNumberOfCartItems(): number {
+  getNumberOfItemInCart(): number {
     let currentCart = JSON.parse(localStorage.getItem('cart'));
+    console.log(currentCart);
     if (currentCart === null) {
       return 0;
     } else {
-      return currentCart.cartItem.size;
+      return currentCart.cartItem.length;
     }
+  }
+
+  clearCart(): void {
+    localStorage.removeItem('cart');
+    this.hasCartUpdated.next(true);
   }
 
 }

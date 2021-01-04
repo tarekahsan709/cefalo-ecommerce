@@ -22,6 +22,12 @@
       </ng-container>
 
       <ng-container *ngIf="auth.hasAuthenticated()">
+        <li class="nav-item">
+          <a routerLink="/product" class="nav-link" routerLinkActive="active">
+            <i class="fa fa-home"></i> Home
+          </a>
+        </li>
+
         <!--        <li class="nav-item">-->
         <!--          <a routerLink="/logout" class="nav-link" routerLinkActive="active">-->
         <!--            <i class="fa fa-sign-out"></i> Logout-->
