@@ -3,6 +3,7 @@ export class IUser {
   id?: string;
   email: string;
   password: string;
+  token: string;
 }
 
 export interface IApiResponse {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
@@ -6,12 +6,12 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent  {
-  isLoggedIn: boolean;
+export class NavbarComponent implements OnInit {
 
-  constructor(public auth: AuthService) {
-    this.auth.loggedIn.subscribe( isLoggedIn => this.isLoggedIn = isLoggedIn);
+  constructor(private auth: AuthService) {
   }
 
+  ngOnInit(): void {
+  }
 
 }

@@ -6,18 +6,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [NavbarComponent],
   imports: [CommonModule, RouterModule, SharedModule],
   exports: [NavbarComponent],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true,
-    },
-    { provide: 'Window', useFactory: () => window }
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService
   ]
 })
 export class CoreModule {

@@ -24,21 +24,21 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6)
   ]);
 
-  isLoggedIn: boolean;
-
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               public toast: ToastComponent,
               private userService: UserService,
               private auth: AuthService) {
-    this.auth.loggedIn.subscribe(isLoggedIn => {
-      this.isLoggedIn = isLoggedIn
-      if (this.isLoggedIn)
-        this.router.navigate(['/product'])
-    });
+    this.buildForm();
   }
 
   ngOnInit(): void {
+    if (this.auth.hasAuthenticated()) {
+      this.router.navigateByUrl('/product');
+    }
+  }
+
+  buildForm(): void {
     this.registerForm = this.formBuilder.group({
       email: this.email,
       password: this.password
@@ -54,10 +54,10 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    this.userService.register(this.registerForm.value).subscribe(
+    this.auth.register(this.registerForm.value).subscribe(
       res => {
         this.toast.setMessage('you successfully registered!', 'success');
-        this.router.navigate(['']);
+        this.router.navigateByUrl('account/login');
       },
       error => this.toast.setMessage('email already exists', 'danger')
     );

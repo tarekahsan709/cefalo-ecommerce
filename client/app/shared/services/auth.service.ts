@@ -1,66 +1,63 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
-
-import { UserService } from './user.service';
 import { ToastComponent } from '../toast/toast.component';
 import { IUser } from '../models/user.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable} from 'rxjs';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { ErrorObservable } from 'rxjs-compat/observable/ErrorObservable';
+import { catchError, map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  private loggedInSubject: BehaviorSubject<boolean>;
-  public loggedIn: Observable<boolean>;
+  public userSubject: BehaviorSubject<IUser>;
 
-  token: string;
-
-  currentUser: IUser = new IUser();
-
-  constructor(private userService: UserService,
-              private router: Router,
-              private jwtHelper: JwtHelperService,
-              public toast: ToastComponent) {
-    this.loggedInSubject = new BehaviorSubject<boolean>(false);
-    this.loggedIn = this.loggedInSubject.asObservable();
-
-    this.token = localStorage.getItem('token');
-    if (this.token) {
-      const decodedUser = this.decodeUserFromToken(this.token);
-      this.setCurrentUser(decodedUser);
-    }
+  constructor(private router: Router,
+              private http: HttpClient,
+              public toast: ToastComponent,
+              public jwtHelperSvc: JwtHelperService) {
+    this.userSubject = new BehaviorSubject<IUser>(null);
   }
 
-  login(emailAndPassword): void {
-    this.userService.login(emailAndPassword).subscribe(
-      res => {
-        localStorage.setItem('token', res.token);
-        const decodedUser = this.decodeUserFromToken(res.token);
-        this.setCurrentUser(decodedUser);
-        this.router.navigate(['product']);
-      },
-      error => this.toast.setMessage('invalid email or password!', 'danger')
+  register(user: IUser): Observable<IUser> {
+    return this.http.post<IUser>('/api/v1/users/register', user).pipe(
+      catchError(AuthService.handleError)
+    );
+  }
+
+  login(credentials): Observable<any> {
+    return this.http.post<any>('/api/v1/users/login', credentials).pipe(
+      map((user: IUser) => {
+        if (user) {
+          localStorage.setItem('token', user.token);
+          this.userSubject.next(user);
+        }
+      }),
+      catchError(AuthService.handleError)
     );
   }
 
   logout(): void {
     localStorage.removeItem('token');
-    this.loggedInSubject.next(false);
-    this.currentUser = new IUser();
-    this.router.navigate(['']);
+    this.userSubject.next(null);
+    this.router.navigateByUrl('account/login');
   }
 
-  decodeUserFromToken(token): object {
-    return this.jwtHelper.decodeToken(token);
+  public hasAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !this.jwtHelperSvc.isTokenExpired(token);
   }
 
-  setCurrentUser(decodedUser): void {
-    this.loggedInSubject.next(true);
-    this.currentUser.id = decodedUser._id;
-    this.currentUser.email = decodedUser.email;
+  private static handleError(error: HttpErrorResponse) {
+    console.error('server error:', error);
+    if (error.error instanceof Error) {
+      const errMessage = error.error.message;
+      return ErrorObservable.create(errMessage);
+    }
+    return ErrorObservable.create(error || 'Node.js server error');
   }
 
-  getAuthHeader(): string {
-    return this.token;
-  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from '../../shared/services/auth.service';
@@ -23,21 +23,21 @@ export class LoginComponent implements OnInit {
     Validators.minLength(4)
   ]);
 
-  isLoggedIn: boolean;
-
   constructor(private auth: AuthService,
               private formBuilder: FormBuilder,
               private router: Router,
+              private activatedRoute: ActivatedRoute,
               public toast: ToastComponent) {
-    this.auth.loggedIn.subscribe(isLoggedIn => {
-      this.isLoggedIn = isLoggedIn
-      if (this.isLoggedIn)
-        this.router.navigate(['/product'])
-    });
-
+    this.buildForm();
   }
 
   ngOnInit(): void {
+    if (this.auth.hasAuthenticated()) {
+      this.router.navigateByUrl('/product');
+    }
+  }
+
+  buildForm(): void {
     this.loginForm = this.formBuilder.group({
       email: this.email,
       password: this.password
@@ -53,7 +53,13 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.auth.login(this.loginForm.value);
+    this.auth.login(this.loginForm.value).subscribe(
+      res => {
+        this.toast.setMessage('you successfully logged in!', 'success');
+        this.router.navigateByUrl('/product');
+      },
+      error => this.toast.setMessage('email already exists', 'danger')
+    );
   }
 
 }

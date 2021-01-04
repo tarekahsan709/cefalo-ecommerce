@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IProductResults } from '../models/product.model';
+import { IProduct, IProductResults } from '../models/product.model';
 import { catchError } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs-compat/observable/ErrorObservable';
 
@@ -13,6 +13,13 @@ export class ProductService {
 
   getProducts(): Observable<IProductResults> {
     return this.http.get<IProductResults>(`/api/v1/products`)
+      .pipe(
+        catchError(ProductService.handleError)
+      );
+  }
+
+  getProductById(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`/api/v1/products/${id}`)
       .pipe(
         catchError(ProductService.handleError)
       );

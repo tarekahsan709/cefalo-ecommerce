@@ -1,32 +1,34 @@
-// Angular
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// Services
-import { AuthGuardLogin } from './shared/services/auth-guard-login.service';
-// Components
-import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGuard } from './core/guards/auth.guard';
+
 
 const routes: Routes = [
   {
-    path: 'product',
-    loadChildren: () =>
-      import('./product/product.module').then((module) => module.ProductModule),
-    canActivate: [AuthGuardLogin]
+    path: '',
+    redirectTo: '/account/login',
+    pathMatch: 'full'
   },
   {
-    path: '',
+    path: 'account',
     loadChildren: () =>
       import('./account/account.module').then((module) => module.AccountModule),
   },
   {
+    path: 'product',
+    loadChildren: () =>
+      import('./product/product.module').then((module) => module.ProductModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: '**',
-    redirectTo: '',
+    redirectTo: '/account/login',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}), ],
+  imports: [RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}),],
   exports: [RouterModule]
 })
 

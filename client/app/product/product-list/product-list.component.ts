@@ -25,8 +25,8 @@ export class ProductListComponent implements OnInit {
       (data) => {
         this.products = data.products;
       },
-      (err: any) => this.toast.setMessage('invalid email or password!', 'danger'),
-      () => this.toast.setMessage('All products loaded', 'success'));
+      (err: any) => this.toast.setMessage('Products retrieved failed', 'danger'),
+      () => this.toast.setMessage('All product loaded', 'success'));
   }
 
 }
