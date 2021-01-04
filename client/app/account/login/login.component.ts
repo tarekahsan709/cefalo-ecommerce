@@ -55,10 +55,8 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.auth.login(this.loginForm.value).subscribe(
       res => {
-        this.toast.setMessage('you successfully logged in!', 'success');
         this.router.navigateByUrl('/product');
-      },
-      error => this.toast.setMessage('email already exists', 'danger')
+      }
     );
   }
 

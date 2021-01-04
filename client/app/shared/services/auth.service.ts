@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import { ToastComponent } from '../toast/toast.component';
 import { IUser } from '../models/user.model';
-import { BehaviorSubject, Observable} from 'rxjs';
-import { HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs-compat/observable/ErrorObservable';
 import { catchError, map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -23,9 +23,7 @@ export class AuthService {
   }
 
   register(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>('/api/v1/users/register', user).pipe(
-      catchError(AuthService.handleError)
-    );
+    return this.http.post<IUser>('/api/v1/users/register', user);
   }
 
   login(credentials): Observable<any> {
@@ -35,8 +33,7 @@ export class AuthService {
           localStorage.setItem('token', user.token);
           this.userSubject.next(user);
         }
-      }),
-      catchError(AuthService.handleError)
+      })
     );
   }
 
@@ -49,15 +46,6 @@ export class AuthService {
   public hasAuthenticated(): boolean {
     const token = localStorage.getItem('token');
     return !this.jwtHelperSvc.isTokenExpired(token);
-  }
-
-  private static handleError(error: HttpErrorResponse) {
-    console.error('server error:', error);
-    if (error.error instanceof Error) {
-      const errMessage = error.error.message;
-      return ErrorObservable.create(errMessage);
-    }
-    return ErrorObservable.create(error || 'Node.js server error');
   }
 
 }

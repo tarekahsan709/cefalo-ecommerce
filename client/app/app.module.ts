@@ -12,6 +12,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     NgxSpinnerModule
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
