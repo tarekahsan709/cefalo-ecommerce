@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -10,17 +11,16 @@ export class CartCounterComponent implements OnInit {
   numberOfItemInCart = 0;
   hasItemInCart = false;
 
-  constructor(private cartSvc: CartService) {
-  }
+  constructor(private cartSvc: CartService) {}
 
   ngOnInit(): void {
     this.listenCartCounter();
   }
 
   listenCartCounter(): void {
-    this.cartSvc.hasCartUpdated.subscribe(hasCartUpdated => {
+    this.cartSvc.hasCartUpdated.subscribe((hasCartUpdated) => {
       this.updateCartCounter();
-    })
+    });
   }
 
   updateCartCounter(): void {
@@ -29,6 +29,4 @@ export class CartCounterComponent implements OnInit {
       this.hasItemInCart = true;
     }
   }
-
-
 }

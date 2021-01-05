@@ -34,7 +34,7 @@ class Server {
     this.app.set('port', process.env.PORT || 3000);
     this.app.use('/', express.static(path.join(__dirname, '../public')));
     this.app.use(express.json());
-    this.app.use(express.urlencoded({extended: false}));
+    this.app.use(express.urlencoded({ extended: false }));
     this.app.use(cookieParser());
 
     if (process.env.NODE_ENV !== 'test') {

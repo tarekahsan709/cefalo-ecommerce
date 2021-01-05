@@ -8,7 +8,7 @@ enum ToastMessage {
   QUANTITY_UNAVAILABLE = 'Quantity is not available',
   EMPTY_CART = 'Cart is empty',
 
-  SUCCESSFULL_CHECKOUT = 'Your order has sent successfully!'
+  SUCCESSFULL_CHECKOUT = 'Your order has sent successfully!',
 }
 
 export default ToastMessage;

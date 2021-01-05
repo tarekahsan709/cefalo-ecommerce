@@ -27,7 +27,7 @@ function connectDatabase() {
   });
 
   mongoose.connection.once('open', async () => {
-    if (process.env.NODE_ENV != 'test'){
+    if (process.env.NODE_ENV != 'test') {
       logger.info('Database has connected');
     }
     if (SEED_DB) {

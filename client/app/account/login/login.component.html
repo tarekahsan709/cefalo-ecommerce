@@ -9,7 +9,14 @@
               <i class="fa fa-envelope"></i>
             </span>
           </div>
-          <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email" autofocus>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            formControlName="email"
+            placeholder="Email"
+            autofocus
+          />
         </div>
         <div class="input-group mt-1" [ngClass]="setClassPassword()">
           <div class="input-group-prepend">
@@ -17,9 +24,19 @@
               <i class="fa fa-key"></i>
             </span>
           </div>
-          <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
+          <input
+            class="form-control"
+            type="password"
+            name="password"
+            formControlName="password"
+            placeholder="Password"
+          />
         </div>
-        <button class="btn btn-dark mt-2" type="submit" [disabled]="!loginForm.valid">
+        <button
+          class="btn btn-dark mt-2"
+          type="submit"
+          [disabled]="!loginForm.valid"
+        >
           <i class="fa fa-sign-in"></i> Login
         </button>
       </form>

@@ -2,22 +2,36 @@
   <a routerLink="/product" class="navbar-brand" routerLinkActive="active">
     <i class="fa fa-home"></i> Home
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-supported-content"
-    aria-controls="navbar-supported-content" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbar-supported-content"
+    aria-controls="navbar-supported-content"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbar-supported-content">
     <ul class="navbar-nav ml-auto">
-
       <ng-container *ngIf="!auth.hasAuthenticated()">
         <li class="nav-item">
-          <a routerLink="account/login" class="nav-link" routerLinkActive="active">
+          <a
+            routerLink="account/login"
+            class="nav-link"
+            routerLinkActive="active"
+          >
             <i class="fa fa-sign-in"></i> Login
           </a>
         </li>
         <li class="nav-item">
-          <a routerLink="account/register" class="nav-link" routerLinkActive="active">
+          <a
+            routerLink="account/register"
+            class="nav-link"
+            routerLinkActive="active"
+          >
             <i class="fa fa-user-plus"></i> Register
           </a>
         </li>
@@ -28,7 +42,11 @@
           <app-cart-counter></app-cart-counter>
         </li>
         <li class="nav-item">
-          <a routerLink="/account/logout" class="nav-link" routerLinkActive="active">
+          <a
+            routerLink="/account/logout"
+            class="nav-link"
+            routerLinkActive="active"
+          >
             <i class="fa fa-sign-out"></i> Logout
           </a>
         </li>

@@ -11,8 +11,10 @@ export class CartController {
       if (!cart.cartItem || cart.cartItem.length <= 0) {
         res.sendStatus(HttpStatusCode.BAD_REQUEST);
       }
-      const totalPrice = await CartController.calculateTotalPrice(cart.cartItem);
-      res.status(HttpStatusCode.OK).json({totalPrice});
+      const totalPrice = await CartController.calculateTotalPrice(
+        cart.cartItem
+      );
+      res.status(HttpStatusCode.OK).json({ totalPrice });
     } catch (error) {
       res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
         timestamp: Date.now(),
@@ -23,11 +25,12 @@ export class CartController {
 
   private static async calculateTotalPrice(cartItems: CartItem[]) {
     let totalPrice = 0;
-    await Promise.all(cartItems.map(async (cartItem) => {
-      const product = await Product.findOne({id: cartItem.productId});
-      totalPrice += product.price * cartItem.quantity;
-    }));
+    await Promise.all(
+      cartItems.map(async (cartItem) => {
+        const product = await Product.findOne({ id: cartItem.productId });
+        totalPrice += product.price * cartItem.quantity;
+      })
+    );
     return totalPrice;
   }
-
 }

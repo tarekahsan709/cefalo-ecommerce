@@ -31,13 +31,13 @@ export class CheckOutComponent implements OnInit {
     this.loadTotalPrice();
   }
 
-  private loadTotalPrice() {
+  private loadTotalPrice(): void {
     this.cartSvc.getTotalPrice(this.cart).subscribe((data) => {
       this.totalPrice = data.totalPrice;
     });
   }
 
-  calculateTotalPrice() {
+  calculateTotalPrice(): void {
     let total = 0;
     this.cart.cartItem.forEach((cartItem, index) => {
       total += cartItem.productPrice * cartItem.quantity;
@@ -54,7 +54,7 @@ export class CheckOutComponent implements OnInit {
         if (item.id === cartItem.id) {
           const currentCart = this.cartSvc.getCurrentCart();
           item.quantity = currentCart.cartItem.find(
-            (item) => item.id === cartItem.id
+            (currentItem) => currentItem.id === cartItem.id
           ).quantity;
         }
       });
@@ -64,9 +64,7 @@ export class CheckOutComponent implements OnInit {
     }
   }
 
-  resetQuantity(): void {}
-
-  onRemoveItem(removedItem) {
+  onRemoveItem(removedItem): void {
     this.cart.cartItem = this.cart.cartItem.filter(
       (cartItem) => cartItem.productId !== removedItem.productId
     );
@@ -77,7 +75,7 @@ export class CheckOutComponent implements OnInit {
     }
   }
 
-  onCheckout(template: TemplateRef<any>) {
+  onCheckout(template: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
   }
 

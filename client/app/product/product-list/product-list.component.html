@@ -1,15 +1,26 @@
 <div class="row card-group mt-2">
-  <div class="col-12 col-sm-8 col-md-6 col-lg-4" *ngFor="let product of products; let i = index">
+  <div
+    class="col-12 col-sm-8 col-md-6 col-lg-4"
+    *ngFor="let product of products; let i = index"
+  >
     <div class="card m-2">
       <div class="card-body">
-        <h4 class="card-title">{{product.name}}</h4>
+        <h4 class="card-title">{{ product.name }}</h4>
         <p class="card-text"></p>
         <div class="">
-          <button class="btn btn-sm btn-outline-dark mt-3 float-right" routerLink="{{product.id}}"
-            *ngIf="!hasAlreadyAdded(product)">Buy Now!
+          <button
+            class="btn btn-sm btn-outline-dark mt-3 float-right"
+            routerLink="{{ product.id }}"
+            *ngIf="!hasAlreadyAdded(product)"
+          >
+            Buy Now!
           </button>
-          <label class="badge badge-success mt-3 float-right" *ngIf="hasAlreadyAdded(product)">
-            Added </label>
+          <label
+            class="badge badge-success mt-3 float-right"
+            *ngIf="hasAlreadyAdded(product)"
+          >
+            Added
+          </label>
         </div>
       </div>
     </div>

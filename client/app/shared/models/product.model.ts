@@ -7,7 +7,7 @@ export interface IVariant {
 export const DEFAULT_VARIANT: IVariant = {
   color: null,
   size: [],
-  quantity: 0
+  quantity: 0,
 };
 
 export interface IProductResults {

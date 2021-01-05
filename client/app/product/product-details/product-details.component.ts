@@ -46,7 +46,7 @@ export class ProductDetailsComponent implements OnInit {
         this.loadDefaultVariant();
       },
       (err: any) => console.error('Failed to retrieve product!'),
-      () => console.debug('Product details has loaded')
+      () => console.log('Product details has loaded')
     );
   }
 

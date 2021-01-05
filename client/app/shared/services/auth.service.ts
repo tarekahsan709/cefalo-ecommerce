@@ -1,24 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
-import { ToastComponent } from '../toast/toast.component';
-import { IUser } from '../models/user.model';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ErrorObservable } from 'rxjs-compat/observable/ErrorObservable';
-import { catchError, map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { IUser } from '../models/user.model';
+import RoutesUrl from '../util/routes-url';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   public userSubject: BehaviorSubject<IUser>;
 
-  constructor(private router: Router,
-              private http: HttpClient,
-              public toast: ToastComponent,
-              public jwtHelperSvc: JwtHelperService) {
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    public toastr: ToastrService,
+    public jwtHelperSvc: JwtHelperService
+  ) {
     this.userSubject = new BehaviorSubject<IUser>(null);
   }
 
@@ -40,12 +42,11 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token');
     this.userSubject.next(null);
-    this.router.navigateByUrl('account/login');
+    this.router.navigateByUrl(RoutesUrl.LOGIN);
   }
 
   public hasAuthenticated(): boolean {
     const token = localStorage.getItem('token');
     return !this.jwtHelperSvc.isTokenExpired(token);
   }
-
 }

@@ -16,5 +16,5 @@ export interface ICart {
 
 export const DEFAULT_CART: ICart = {
   id: Math.floor(Math.random() * 5000000),
-  cartItem: []
+  cartItem: [],
 };

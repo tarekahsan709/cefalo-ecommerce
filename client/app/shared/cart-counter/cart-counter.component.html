@@ -1,5 +1,11 @@
-<button class="btn btn-light" routerLink="/cart" routerLinkActive="active"
-        [disabled]="numberOfItemInCart == 0 ? true : null">
+<button
+  class="btn btn-light"
+  routerLink="/cart"
+  routerLinkActive="active"
+  [disabled]="numberOfItemInCart == 0 ? true : null"
+>
   <i class="fa fa-shopping-cart"></i> Cart
-  <span class="badge badge-danger" id="cart-count">{{numberOfItemInCart}}</span>
+  <span class="badge badge-danger" id="cart-count">{{
+    numberOfItemInCart
+  }}</span>
 </button>

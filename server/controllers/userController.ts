@@ -7,8 +7,7 @@ import { IUser, User } from '../models/user';
 import HttpStatusCode from '../util/HttpStatusCode';
 
 export class UserController {
-  constructor() {
-  }
+  constructor() {}
 
   public async registerUser(
     req: Request,
@@ -27,7 +26,7 @@ export class UserController {
     )(req, res, next);
   }
 
-  public async  authenticateUser(
+  public async authenticateUser(
     req: Request,
     res: Response,
     next: NextFunction
@@ -39,7 +38,7 @@ export class UserController {
       if (!user) {
         return res
           .status(HttpStatusCode.UNAUTHORIZED)
-          .json({msg: info.message});
+          .json({ msg: info.message });
       } else {
         res.json(formatProfile(user.toJSON()));
       }
@@ -49,7 +48,7 @@ export class UserController {
   public async getUsers(req: Request, res: Response): Promise<void> {
     try {
       const users = await User.find();
-      res.status(HttpStatusCode.OK).json({users});
+      res.status(HttpStatusCode.OK).json({ users });
     } catch (error) {
       res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
         timestamp: Date.now(),
@@ -60,7 +59,7 @@ export class UserController {
 
   public async getUser(req: Request, res: Response): Promise<void> {
     try {
-      const user = await User.findOne({id: req.params.id});
+      const user = await User.findOne({ id: req.params.id });
       if (user === null) {
         res.sendStatus(HttpStatusCode.NOT_FOUND);
       } else {

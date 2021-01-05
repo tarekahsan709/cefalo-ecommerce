@@ -22,14 +22,10 @@ export function isAuthenticate(
  * Returns a jwt token signed by the app secret
  */
 export function generateAccessToken(user): any {
-  return jwt.sign(
-    user,
-    JWT_SECRET,
-    {
-      expiresIn: '3d',
-      issuer: user._id.toString(),
-    }
-  );
+  return jwt.sign(user, JWT_SECRET, {
+    expiresIn: '3d',
+    issuer: user._id.toString(),
+  });
 }
 /**
  * Returns the user profile with access token

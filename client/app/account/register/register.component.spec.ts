@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../shared/services/user.service';
-import { ToastComponent } from '../../shared/toast/toast.component';
 import { RegisterComponent } from './register.component';
 
 class RouterMock {}
@@ -21,7 +20,6 @@ describe('Component: Register', () => {
         imports: [FormsModule, ReactiveFormsModule],
         declarations: [RegisterComponent],
         providers: [
-          ToastComponent,
           { provide: Router, useClass: RouterMock },
           { provide: UserService, useClass: UserServiceMock },
         ],

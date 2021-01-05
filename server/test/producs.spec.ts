@@ -13,7 +13,6 @@ process.env.NODE_ENV = 'test';
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-
 describe('GET /products', () => {
   let token = '';
 
@@ -37,12 +36,10 @@ describe('GET /products', () => {
     const res = await chai
       .request(server)
       .get('/api/v1/products')
-      .set({Authorization: `Bearer ${token}`});
+      .set({ Authorization: `Bearer ${token}` });
 
     expect(res.status).to.equal(200);
     expect(res.body.products).to.be.a('array');
     expect(res.body.products).to.have.lengthOf(20);
   });
-
 });
-

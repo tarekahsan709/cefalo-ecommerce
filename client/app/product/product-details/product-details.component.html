@@ -2,31 +2,47 @@
   <div class="col-12 col-sm-8 col-md-6 col-lg-4">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">{{product.name}}</h4>
+        <h4 class="card-title">{{ product.name }}</h4>
         <h6 class="badge badge-success" *ngIf="product.available">Available</h6>
-        <h6 class="badge badge-danger" *ngIf="!product.available">Unavailable</h6>
+        <h6 class="badge badge-danger" *ngIf="!product.available">
+          Unavailable
+        </h6>
         <div class="row">
           <div class="col-12 col-sm-8 col-md-6 col-lg-6">
             <label>Select Color </label>
-            <select class="custom-select mr-1" (change)="onChangeColor($event.target.value)"
-              [(ngModel)]="selectedColor">
-              <option *ngFor="let variant of variants">{{variant.color}}</option>
+            <select
+              class="custom-select mr-1"
+              (change)="onChangeColor($event.target.value)"
+              [(ngModel)]="selectedColor"
+            >
+              <option *ngFor="let variant of variants">
+                {{ variant.color }}
+              </option>
             </select>
           </div>
           <div class="col-12 col-sm-8 col-md-6 col-lg-6">
             <label>Select Size </label>
-            <select class="custom-select mr-1" (change)="onChangeSize($event.target.value)" [(ngModel)]="selectedSize">
-              <option *ngFor="let size of selectedSizeList">{{size}}</option>
+            <select
+              class="custom-select mr-1"
+              (change)="onChangeSize($event.target.value)"
+              [(ngModel)]="selectedSize"
+            >
+              <option *ngFor="let size of selectedSizeList">{{ size }}</option>
             </select>
           </div>
         </div>
         <div class="buy d-flex justify-content-between align-items-center">
           <div class="price text-dark">
-            <h5 class="mt-4">Price {{ product.price | currency:'BDT' :'symbol-narrow'}}</h5>
+            <h5 class="mt-4">
+              Price {{ product.price | currency: "BDT":"symbol-narrow" }}
+            </h5>
           </div>
-          <button class="btn btn-success mt-3" [disabled]="!product.available" (click)="addToCart()"><i
-              class="fa fa-shopping-cart"></i> Add
-            to Cart
+          <button
+            class="btn btn-success mt-3"
+            [disabled]="!product.available"
+            (click)="addToCart()"
+          >
+            <i class="fa fa-shopping-cart"></i> Add to Cart
           </button>
         </div>
       </div>

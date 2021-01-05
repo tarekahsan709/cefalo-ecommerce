@@ -12,9 +12,7 @@ process.env.NODE_ENV = 'test';
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-
-describe("POST /register", () => {
-
+describe('POST /register', () => {
   before(async function () {
     await User.deleteMany({});
   });
@@ -42,11 +40,9 @@ describe("POST /register", () => {
 
     expect(res.status).to.equal(400);
   });
-
 });
 
-describe("POST /login", () => {
-
+describe('POST /login', () => {
   before(async function () {
     const res = await chai
       .request(server)
@@ -63,7 +59,6 @@ describe("POST /login", () => {
     expect(res.status).to.equal(200);
     expect(res.body).to.be.a('object');
     expect(res.body).to.have.property('token');
-
   });
 
   it('should return error with error message ', async function () {
@@ -74,5 +69,4 @@ describe("POST /login", () => {
 
     expect(res.status).to.equal(401);
   });
-
 });

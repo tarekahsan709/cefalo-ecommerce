@@ -8,9 +8,8 @@ describe('CartCounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CartCounterComponent]
-    })
-      .compileComponents();
+      declarations: [CartCounterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,4 +22,3 @@ describe('CartCounterComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

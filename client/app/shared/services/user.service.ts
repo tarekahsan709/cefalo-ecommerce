@@ -1,13 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IUser } from '../models/user.model';
 
+import { IUser } from '../models/user.model';
 
 @Injectable()
 export class UserService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   register(user: IUser): Observable<IUser> {
     return this.http.post<IUser>('/api/v1/users/register', user);
@@ -30,11 +29,14 @@ export class UserService {
   }
 
   editUser(user: IUser): Observable<any> {
-    return this.http.put(`/api/v1/users/${user.id}`, user, { responseType: 'text' });
+    return this.http.put(`/api/v1/users/${user.id}`, user, {
+      responseType: 'text',
+    });
   }
 
   deleteUser(user: IUser): Observable<any> {
-    return this.http.delete(`/api/v1/users/${user.id}`, { responseType: 'text' });
+    return this.http.delete(`/api/v1/users/${user.id}`, {
+      responseType: 'text',
+    });
   }
-
 }

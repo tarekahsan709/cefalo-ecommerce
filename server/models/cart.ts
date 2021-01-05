@@ -13,4 +13,3 @@ export interface Cart {
   id: number;
   cartItem: CartItem[];
 }
-

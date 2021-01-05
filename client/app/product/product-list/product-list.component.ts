@@ -27,7 +27,7 @@ export class ProductListComponent implements OnInit {
         this.products = data.products;
       },
       (err: any) => console.error('Products retrieved failed'),
-      () => console.debug('All product loaded')
+      () => console.log('All product loaded')
     );
   }
 

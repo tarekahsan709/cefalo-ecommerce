@@ -12,5 +12,4 @@ export class CefaloEcommercePages {
   async getNavbarButton(): Promise<string> {
     return element(by.css('app-root button.navbar-toggler')).getText();
   }
-
 }
