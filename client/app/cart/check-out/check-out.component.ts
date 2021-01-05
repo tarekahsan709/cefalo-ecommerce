@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import RoutesUrl from 'client/app/shared/util/routes-url';
 import ToastMessage from 'client/app/shared/util/toast-message';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.scss'],
 })
-export class CheckOutComponent implements OnInit {
+export class CheckOutComponent implements OnInit, OnDestroy {
   modalRef: BsModalRef;
 
   cart: ICart;

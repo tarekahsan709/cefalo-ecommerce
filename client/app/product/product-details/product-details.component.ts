@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import RoutesUrl from 'client/app/shared/util/routes-url';
 import ToastMessage from 'client/app/shared/util/toast-message';
@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit, OnDestroy {
   private readonly defaultQuantity = 1;
   selectedColor: string;
   selectedSizeList: string[];

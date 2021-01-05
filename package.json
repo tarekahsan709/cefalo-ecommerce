@@ -20,7 +20,7 @@
     "prod": "concurrently \"mongod\" \"ng build --aot --prod && tsc -p server && node dist/server/server.js\"",
     "test": "ng test",
     "testbe": "tsc -p server && mocha dist/server/test --exit",
-    "lint": "ng lint && htmlhint \"client/**/*.html\" && sass-lint \"client/**/*.scss\" -v && tslint server/**/**.ts{,x}",
+    "lint": "ng lint && htmlhint \"client/**/*.html\" && sass-lint \"client/**/*.scss\" -v",
     "e2e": "ng e2e --webdriver-update=false",
     "postinstall": "cd ./node_modules/protractor && npm i webdriver-manager@latest && webdriver-manager update --versions.chrome 86.0.4240.22"
   },

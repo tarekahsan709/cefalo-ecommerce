@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { IProduct } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   products: IProduct[];
 
   productsSubscription: Subscription;
