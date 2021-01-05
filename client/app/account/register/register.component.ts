@@ -11,6 +11,7 @@ import ToastMessage from 'client/app/shared/util/toast-message';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from '../../shared/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -29,6 +30,8 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6),
   ]);
 
+  logoutSubscription: Subscription;
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -42,6 +45,10 @@ export class RegisterComponent implements OnInit {
     if (this.auth.hasAuthenticated()) {
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.logoutSubscription.unsubscribe();
   }
 
   buildForm(): void {
@@ -60,7 +67,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    this.auth.register(this.registerForm.value).subscribe((res) => {
+    this.logoutSubscription = this.auth.register(this.registerForm.value).subscribe((res) => {
       this.toastr.success(ToastMessage.SUCCESSFULL_REGISTRATION);
       this.router.navigateByUrl(RoutesUrl.LOGIN);
     });

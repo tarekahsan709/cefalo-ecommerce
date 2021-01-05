@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
 import { ProductService } from '../../shared/services/product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -11,6 +12,8 @@ import { ProductService } from '../../shared/services/product.service';
 })
 export class ProductListComponent implements OnInit {
   products: IProduct[];
+
+  productsSubscription: Subscription;
 
   constructor(
     private productSvc: ProductService,
@@ -21,8 +24,12 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
 
+  ngOnDestroy(): void {
+    this.productsSubscription.unsubscribe();
+  }
+
   getProducts(): void {
-    this.productSvc.getProducts().subscribe(
+    this.productsSubscription = this.productSvc.getProducts().subscribe(
       (data) => {
         this.products = data.products;
       },

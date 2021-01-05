@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 
 import { ICart } from '../../shared/models/cart.model';
 import { CartService } from '../../shared/services/cart.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-check-out',
@@ -18,6 +19,8 @@ export class CheckOutComponent implements OnInit {
 
   cart: ICart;
   totalPrice: number;
+
+  priceSubscription: Subscription;
 
   constructor(
     private cartSvc: CartService,
@@ -31,8 +34,12 @@ export class CheckOutComponent implements OnInit {
     this.loadTotalPrice();
   }
 
+  ngOnDestroy(): void {
+    this.priceSubscription.unsubscribe();
+  }
+
   private loadTotalPrice(): void {
-    this.cartSvc.getTotalPrice(this.cart).subscribe((data) => {
+    this.priceSubscription = this.cartSvc.getTotalPrice(this.cart).subscribe((data) => {
       this.totalPrice = data.totalPrice;
     });
   }

@@ -8,6 +8,7 @@ import { ICartItem } from '../../shared/models/cart.model';
 import { IProduct, IVariant } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
 import { ProductService } from '../../shared/services/product.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
@@ -26,6 +27,8 @@ export class ProductDetailsComponent implements OnInit {
 
   private readonly firstItemIndex = 0;
 
+  productSubscription: Subscription;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private productSvc: ProductService,
@@ -39,8 +42,12 @@ export class ProductDetailsComponent implements OnInit {
     this.getProductDetails(id);
   }
 
+  ngOnDestroy(): void {
+    this.productSubscription.unsubscribe();
+  }
+
   getProductDetails(id: string): void {
-    this.productSvc.getProductById(id).subscribe(
+    this.productSubscription = this.productSvc.getProductById(id).subscribe(
       (data) => {
         this.product = data;
         this.loadDefaultVariant();

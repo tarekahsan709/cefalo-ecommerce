@@ -11,6 +11,7 @@ import ToastMessage from 'client/app/shared/util/toast-message';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from '../../shared/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
     Validators.minLength(4),
   ]);
 
+  loginSubscription: Subscription;
+
   constructor(
     private auth: AuthService,
     private formBuilder: FormBuilder,
@@ -42,6 +45,10 @@ export class LoginComponent implements OnInit {
     if (this.auth.hasAuthenticated()) {
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     }
+  }
+
+  ngOnDestroy(): void{
+    this.loginSubscription.unsubscribe();
   }
 
   buildForm(): void {
@@ -60,7 +67,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.auth.login(this.loginForm.value).subscribe((res) => {
+    this.loginSubscription = this.auth.login(this.loginForm.value).subscribe((res) => {
       this.toastr.success(ToastMessage.SUCCESSFULL_LOGIN);
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     });
