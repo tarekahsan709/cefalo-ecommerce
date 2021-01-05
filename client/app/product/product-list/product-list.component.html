@@ -5,7 +5,12 @@
         <h4 class="card-title">{{product.name}}</h4>
         <p class="card-text"></p>
         <div class="">
-          <button class="btn btn-sm btn-outline-dark mt-3 float-right"  routerLink="{{product.id}}">Buy Now!</button>
+          <button class="btn btn-sm btn-outline-dark mt-3 float-right" routerLink="{{product.id}}"
+                  *ngIf="!hasAlreadyAdded(product)">Buy Now!
+          </button>
+          <label class="alert alert-primary mt-3 float-right" *ngIf="hasAlreadyAdded(product)">
+            Already added in your cart
+          </label>
         </div>
       </div>
     </div>

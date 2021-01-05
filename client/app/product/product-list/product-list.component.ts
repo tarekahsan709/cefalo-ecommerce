@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { IProduct } from '../../shared/models/product.model';
 import { ToastComponent } from '../../shared/toast/toast.component';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -13,6 +14,7 @@ export class ProductListComponent implements OnInit {
   products: IProduct[];
 
   constructor(private productSvc: ProductService,
+              private cartSvc: CartService,
               public toast: ToastComponent) {
   }
 
@@ -29,4 +31,7 @@ export class ProductListComponent implements OnInit {
       () => this.toast.setMessage('All product loaded', 'success'));
   }
 
+  hasAlreadyAdded(product): boolean {
+    return this.cartSvc.hasProductAdded(product.id);
+  }
 }

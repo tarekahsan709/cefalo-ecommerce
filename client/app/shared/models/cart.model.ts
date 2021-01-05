@@ -6,6 +6,7 @@ export interface ICartItem {
   variantSize: string;
   productPrice: number;
   quantity: number;
+  quantityInStock: number;
 }
 
 export interface ICart {
@@ -14,6 +15,6 @@ export interface ICart {
 }
 
 export const DEFAULT_CART: ICart = {
-  id: Math.floor(Math.random() * 1000000),
+  id: Math.floor(Math.random() * 5000000),
   cartItem: []
 };

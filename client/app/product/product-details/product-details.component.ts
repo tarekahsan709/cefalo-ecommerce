@@ -21,6 +21,8 @@ export class ProductDetailsComponent implements OnInit {
   variants: IVariant[];
   selectedVariant: IVariant;
 
+  private readonly firstItemIndex = 0;
+
   constructor(private activatedRoute: ActivatedRoute,
               private toast: ToastComponent,
               private productSvc: ProductService,
@@ -47,32 +49,34 @@ export class ProductDetailsComponent implements OnInit {
     this.variants = this.product.variants;
 
     if (this.variants.length > 0) {
-      this.selectedVariant = this.variants[0];
+      this.selectedVariant = this.variants[this.firstItemIndex];
       this.selectedColor = this.selectedVariant.color;
       this.selectedSizeList = this.selectedVariant.size;
-      this.selectedSize = this.selectedSizeList[0];
+      this.selectedSize = this.selectedSizeList[this.firstItemIndex];
     }
   }
 
   onChangeColor(color): void {
+    this.selectedVariant = this.variants.find(v => v.color === color);
     this.selectedColor = color;
     this.selectedSizeList = this.variants.find(v => v.color === color).size;
-    this.selectedSize = this.selectedSizeList[0];
+    this.selectedSize = this.selectedSizeList[this.firstItemIndex];
   }
 
   onChangeSize(size): void {
     this.selectedSize = size;
   }
 
-  addToCart(): void {
+  addToCart(product): void {
     const cartItem: ICartItem = {
-      id: Math.floor(Math.random() * 1000000),
+      id: Math.floor(Math.random() * 5000000),
       productId: this.product.id,
       productPrice: this.product.price,
       productName: this.product.name,
       variantColor: this.selectedColor,
       variantSize: this.selectedSize,
-      quantity: this.defaultQuantity
+      quantity: this.defaultQuantity,
+      quantityInStock: this.selectedVariant.quantity
     };
     console.log("Cart Item", cartItem);
 

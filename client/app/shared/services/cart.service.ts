@@ -41,6 +41,12 @@ export class CartService {
     }
   }
 
+  hasProductAdded(productId): boolean {
+    const currentCart = this.getCurrentCart();
+    let cartItem = currentCart.cartItem.find(item => item.productId === productId)
+    return !!(cartItem);
+  }
+
   clearCart(): void {
     localStorage.removeItem('cart');
     this.hasCartUpdated.next(true);
