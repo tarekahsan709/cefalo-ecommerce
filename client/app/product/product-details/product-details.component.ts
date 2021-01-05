@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastComponent } from '../../shared/toast/toast.component';
-import { ProductService } from '../../shared/services/product.service';
-import { IProduct, IVariant } from '../../shared/models/product.model';
+import RoutesUrl from 'client/app/shared/util/routes-url';
+import ToastMessage from 'client/app/shared/util/toast-message';
+import { ToastrService } from 'ngx-toastr';
+
 import { ICartItem } from '../../shared/models/cart.model';
+import { IProduct, IVariant } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-  defaultQuantity = 1;
+  private readonly defaultQuantity = 1;
   selectedColor: string;
   selectedSizeList: string[];
   selectedSize: string;
@@ -23,12 +26,13 @@ export class ProductDetailsComponent implements OnInit {
 
   private readonly firstItemIndex = 0;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private toast: ToastComponent,
-              private productSvc: ProductService,
-              private cartSvc: CartService,
-              private router: Router) {
-  }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productSvc: ProductService,
+    private toastr: ToastrService,
+    private cartSvc: CartService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -41,8 +45,9 @@ export class ProductDetailsComponent implements OnInit {
         this.product = data;
         this.loadDefaultVariant();
       },
-      (err: any) => this.toast.setMessage('Failed to retrieve product!', 'danger'),
-      () => this.toast.setMessage('Product details has loaded', 'success'));
+      (err: any) => console.error('Failed to retrieve product!'),
+      () => console.debug('Product details has loaded')
+    );
   }
 
   loadDefaultVariant(): void {
@@ -57,9 +62,9 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onChangeColor(color): void {
-    this.selectedVariant = this.variants.find(v => v.color === color);
+    this.selectedVariant = this.variants.find((v) => v.color === color);
     this.selectedColor = color;
-    this.selectedSizeList = this.variants.find(v => v.color === color).size;
+    this.selectedSizeList = this.variants.find((v) => v.color === color).size;
     this.selectedSize = this.selectedSizeList[this.firstItemIndex];
   }
 
@@ -67,7 +72,7 @@ export class ProductDetailsComponent implements OnInit {
     this.selectedSize = size;
   }
 
-  addToCart(product): void {
+  addToCart(): void {
     const cartItem: ICartItem = {
       id: Math.floor(Math.random() * 5000000),
       productId: this.product.id,
@@ -76,14 +81,11 @@ export class ProductDetailsComponent implements OnInit {
       variantColor: this.selectedColor,
       variantSize: this.selectedSize,
       quantity: this.defaultQuantity,
-      quantityInStock: this.selectedVariant.quantity
+      quantityInStock: this.selectedVariant.quantity,
     };
-    console.log("Cart Item", cartItem);
 
     this.cartSvc.addToCart(cartItem);
-    this.toast.setMessage(
-      'Products has added to cart! Please go to cart for checkout', 'success');
-    this.router.navigate(['/product']);
+    this.toastr.success(ToastMessage.PRODUCT_ADDED);
+    this.router.navigateByUrl(RoutesUrl.PRODUCT);
   }
-
 }

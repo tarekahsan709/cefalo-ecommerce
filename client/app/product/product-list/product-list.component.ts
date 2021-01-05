@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../shared/services/product.service';
+
 import { IProduct } from '../../shared/models/product.model';
-import { ToastComponent } from '../../shared/toast/toast.component';
 import { CartService } from '../../shared/services/cart.service';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-
   products: IProduct[];
 
-  constructor(private productSvc: ProductService,
-              private cartSvc: CartService,
-              public toast: ToastComponent) {
-  }
+  constructor(
+    private productSvc: ProductService,
+    private cartSvc: CartService
+  ) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -27,8 +26,9 @@ export class ProductListComponent implements OnInit {
       (data) => {
         this.products = data.products;
       },
-      (err: any) => this.toast.setMessage('Products retrieved failed', 'danger'),
-      () => this.toast.setMessage('All product loaded', 'success'));
+      (err: any) => console.error('Products retrieved failed'),
+      () => console.debug('All product loaded')
+    );
   }
 
   hasAlreadyAdded(product): boolean {
