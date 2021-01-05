@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './core/guards/auth.guard';
 
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/account/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'account',
@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'product',
     loadChildren: () =>
       import('./product/product.module').then((module) => module.ProductModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'cart',
@@ -29,14 +29,12 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: '/account/login',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy'}),],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

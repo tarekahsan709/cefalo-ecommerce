@@ -1,19 +1,15 @@
-// Angular
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// Modules
+import { NgModule } from '@angular/core';
+
 import { SharedModule } from '../shared/shared.module';
 import { AccountRoutingModule } from './account-routing.module';
-// Components
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
-// Services
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [LoginComponent, LogoutComponent, RegisterComponent],
   imports: [CommonModule, AccountRoutingModule, SharedModule],
-  providers: []
+  providers: [],
 })
-export class AccountModule {
-}
+export class AccountModule {}

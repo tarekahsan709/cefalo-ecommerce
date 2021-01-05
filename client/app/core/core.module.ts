@@ -7,10 +7,19 @@ import { SharedModule } from '../shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [NavbarComponent],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })
+  ],
   exports: [NavbarComponent],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

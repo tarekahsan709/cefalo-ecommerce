@@ -1,34 +1,33 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
-import { ToastComponent } from '../../shared/toast/toast.component';
 import { UserService } from '../../shared/services/user.service';
+import { ToastComponent } from '../../shared/toast/toast.component';
 import { RegisterComponent } from './register.component';
 
-class RouterMock {
-}
+class RouterMock {}
 
-class UserServiceMock {
-}
+class UserServiceMock {}
 
 describe('Component: Register', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
-      declarations: [RegisterComponent],
-      providers: [
-        ToastComponent,
-        {provide: Router, useClass: RouterMock},
-        {provide: UserService, useClass: UserServiceMock}
-      ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [FormsModule, ReactiveFormsModule],
+        declarations: [RegisterComponent],
+        providers: [
+          ToastComponent,
+          { provide: Router, useClass: RouterMock },
+          { provide: UserService, useClass: UserServiceMock },
+        ],
+      }).compileComponents();
     })
-      .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RegisterComponent);
@@ -46,7 +45,9 @@ describe('Component: Register', () => {
   });
 
   it('should display the email and password inputs', () => {
-    const [inputEmail, inputPassword] = fixture.debugElement.queryAll(By.css('input'));
+    const [inputEmail, inputPassword] = fixture.debugElement.queryAll(
+      By.css('input')
+    );
     expect(inputEmail.nativeElement).toBeTruthy();
     expect(inputPassword.nativeElement).toBeTruthy();
     expect(inputEmail.nativeElement.value).toBeFalsy();
@@ -59,5 +60,4 @@ describe('Component: Register', () => {
     expect(el.textContent).toContain('Register');
     expect(el.disabled).toBeTruthy();
   });
-
 });

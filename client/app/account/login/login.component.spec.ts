@@ -3,29 +3,32 @@ import { By } from '@angular/platform-browser';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { ToastComponent } from '../../shared/toast/toast.component';
 import { AuthService } from '../../shared/services/auth.service';
 import { LoginComponent } from './login.component';
+import { ToastrService } from 'ngx-toastr';
 
-class AuthServiceMock { }
-class RouterMock { }
+class AuthServiceMock {}
+class ToastrServiceMock {}
+class RouterMock {}
 
 describe('Component: Login', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [ FormsModule, ReactiveFormsModule ],
-      declarations: [ LoginComponent ],
-      providers: [
-        FormBuilder, ToastComponent,
-        { provide: Router, useClass: RouterMock },
-        { provide: AuthService, useClass: AuthServiceMock }
-      ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [FormsModule, ReactiveFormsModule, Router],
+        declarations: [LoginComponent],
+        providers: [
+          FormBuilder,
+          { provide: Router, useClass: RouterMock },
+          { provide: AuthService, useClass: AuthServiceMock },
+          { provide: ToastrService, useClass: ToastrServiceMock },
+        ],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
@@ -42,8 +45,10 @@ describe('Component: Login', () => {
     expect(el.textContent).toContain('Login');
   });
 
-  it('should display the username and password inputs', () => {
-    const [inputUsername, inputPassword] = fixture.debugElement.queryAll(By.css('input'));
+  it('should display the email and password inputs', () => {
+    const [inputUsername, inputPassword] = fixture.debugElement.queryAll(
+      By.css('input')
+    );
     expect(inputUsername.nativeElement).toBeTruthy();
     expect(inputPassword.nativeElement).toBeTruthy();
     expect(inputUsername.nativeElement.value).toBeFalsy();
@@ -56,5 +61,4 @@ describe('Component: Login', () => {
     expect(el.textContent).toContain('Login');
     expect(el.disabled).toBeTruthy();
   });
-
 });

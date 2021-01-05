@@ -1,4 +1,4 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { AuthService } from '../../shared/services/auth.service';
 import { LogoutComponent } from './logout.component';
@@ -15,13 +15,14 @@ describe('Component: Logout', () => {
   let fixture: ComponentFixture<LogoutComponent>;
   let authService: AuthService;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LogoutComponent ],
-      providers: [ { provide: AuthService, useClass: AuthServiceMock } ],
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [LogoutComponent],
+        providers: [{ provide: AuthService, useClass: AuthServiceMock }],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LogoutComponent);
@@ -39,5 +40,4 @@ describe('Component: Logout', () => {
     authService.logout();
     // expect(authService.loggedIn).toBeFalsy();
   });
-
 });

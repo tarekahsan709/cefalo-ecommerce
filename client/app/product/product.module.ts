@@ -1,26 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
-
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductRoutingModule } from './product-routing.module';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-
-
 
 @NgModule({
-  declarations: [
-    ProductListComponent,
-    ProductDetailsComponent
-  ],
+  declarations: [ProductListComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
     CoreModule,
     SharedModule,
     FormsModule,
-    ProductRoutingModule
-  ]
+    ProductRoutingModule,
+  ],
 })
-export class ProductModule { }
+export class ProductModule {}
