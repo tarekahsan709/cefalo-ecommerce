@@ -6,6 +6,8 @@ enum ToastMessage {
   PRODUCT_REMOVE = 'Product has removed from the cart',
 
   QUANTITY_UNAVAILABLE = 'Quantity is not available',
+  EMPTY_CART = 'Cart is empty',
+
   SUCCESSFULL_CHECKOUT = 'Your order has sent successfully!'
 }
 
