@@ -8,6 +8,7 @@ import { CartService } from '../services/cart.service';
 })
 export class CartCounterComponent implements OnInit {
   numberOfItemInCart = 0;
+  hasItemInCart = false;
 
   constructor(private cartSvc: CartService) {
   }
@@ -18,14 +19,16 @@ export class CartCounterComponent implements OnInit {
 
   listenCartCounter(): void {
     this.cartSvc.hasCartUpdated.subscribe(hasCartUpdated => {
-      console.log("listenCartCounter", hasCartUpdated);
       this.updateCartCounter();
     })
   }
 
   updateCartCounter(): void {
-    console.log("getNumberOfItemInCart", this.cartSvc.getNumberOfItemInCart());
     this.numberOfItemInCart = this.cartSvc.getNumberOfItemInCart();
+    if (this.numberOfItemInCart > 0) {
+      this.hasItemInCart = true;
+    }
   }
+
 
 }

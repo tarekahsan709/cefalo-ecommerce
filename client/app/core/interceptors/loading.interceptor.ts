@@ -2,15 +2,17 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+
 import { BusyService } from '../services/busy.service';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
-  constructor(private busyService: BusyService) {
+  constructor(private busyService: BusyService) {}
 
-  }
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     this.busyService.busy();
     return next.handle(req).pipe(
       finalize(() => {
@@ -18,5 +20,4 @@ export class LoadingInterceptor implements HttpInterceptor {
       })
     );
   }
-
 }
