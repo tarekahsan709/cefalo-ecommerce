@@ -3,6 +3,7 @@ import { CartService } from '../../shared/services/cart.service';
 import { ICart } from '../../shared/models/cart.model';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastComponent } from '../../shared/toast/toast.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-check-out',
@@ -13,22 +14,34 @@ export class CheckOutComponent implements OnInit {
   modalRef: BsModalRef;
 
   cart: ICart;
+  totalPrice: number;
 
   constructor(private cartSvc: CartService,
               private modalService: BsModalService,
+              private router: Router,
               private toast: ToastComponent) {
   }
 
   ngOnInit(): void {
     this.cart = this.cartSvc.getCurrentCart();
+    this.loadTotalPrice();
   }
 
-  getTotalPrice() {
+  private loadTotalPrice() {
+    this.cartSvc.getTotalPrice(this.cart).subscribe(
+      data => {
+        this.totalPrice = data.totalPrice;
+        console.log("Total Price from server", data.totalPrice);
+      }
+    );
+  }
+
+  calculateTotalPrice() {
     let total = 0;
     this.cart.cartItem.forEach((cartItem, index) => {
       total += cartItem.productPrice * cartItem.quantity;
     })
-    return total;
+    this.totalPrice = total;
   }
 
   onQuantityChange(cartItem): void {
@@ -41,6 +54,8 @@ export class CheckOutComponent implements OnInit {
       })
       alert("Quantity unavailable")
       this.toast.setMessage('Quantity unavailable', 'warning', 4000);
+    } else {
+      this.calculateTotalPrice();
     }
   }
 
@@ -50,6 +65,11 @@ export class CheckOutComponent implements OnInit {
 
   onRemoveItem(removedItem) {
     this.cart.cartItem = this.cart.cartItem.filter(cartItem => cartItem.productId !== removedItem.productId);
+    if (this.cart.cartItem.length === 0) {
+      alert("Empty Cart");
+      this.cartSvc.clearCart();
+      this.router.navigateByUrl('products');
+    }
   }
 
   onCheckout(template: TemplateRef<any>) {
@@ -57,6 +77,9 @@ export class CheckOutComponent implements OnInit {
   }
 
   confirm(): void {
+    alert("Thanks!!, Your order is under processing");
+    this.cartSvc.clearCart();
+    this.router.navigateByUrl('/products');
     this.modalRef.hide();
   }
 

@@ -9,6 +9,7 @@ import { connectDatabase, disconnectDatabase } from './config/mongo';
 import { ProductRoutes } from './routes/productRoutes';
 import { UserRoutes } from './routes/userRoutes';
 import logger from './util/logger';
+import { CartRoutes } from './routes/cartRoutes';
 
 const API_BASE_URL = '/api/v1/';
 
@@ -33,7 +34,7 @@ class Server {
     this.app.set('port', process.env.PORT || 3000);
     this.app.use('/', express.static(path.join(__dirname, '../public')));
     this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: false }));
+    this.app.use(express.urlencoded({extended: false}));
     this.app.use(cookieParser());
 
     if (process.env.NODE_ENV !== 'test') {
@@ -68,6 +69,7 @@ class Server {
   private initRoutes(): void {
     this.app.use(`${API_BASE_URL}users`, new UserRoutes().router);
     this.app.use(`${API_BASE_URL}products`, new ProductRoutes().router);
+    this.app.use(`${API_BASE_URL}carts`, new CartRoutes().router);
   }
 
   public start(): void {
@@ -83,4 +85,4 @@ class Server {
 const server = new Server();
 server.start();
 
-module .exports = server.app;
+module.exports = server.app;

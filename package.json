@@ -15,6 +15,7 @@
     "buildprod": "ng build --aot --prod && tsc -p server",
     "start": "node dist/server/app.js",
     "predev": "tsc -p server",
+    "backend": "concurrently \"tsc -w -p server\" \"nodemon dist/server/server.js\"",
     "dev": "concurrently \"mongod\" \"ng serve --open\" \"tsc -w -p server\" \"nodemon dist/server/server.js\"",
     "prod": "concurrently \"mongod\" \"ng build --aot --prod && tsc -p server && node dist/server/server.js\"",
     "test": "ng test",

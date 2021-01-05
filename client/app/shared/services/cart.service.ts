@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DEFAULT_CART, ICart, ICartItem } from '../models/cart.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
   public hasCartUpdated: BehaviorSubject<boolean>;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.hasCartUpdated = new BehaviorSubject<boolean>(true);
   }
 
@@ -39,6 +40,10 @@ export class CartService {
     } else {
       return currentCart.cartItem.length;
     }
+  }
+
+  getTotalPrice(cart: ICart): Observable<any> {
+    return this.http.post('/api/v1/carts/checkout', cart);
   }
 
   hasProductAdded(productId): boolean {

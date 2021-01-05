@@ -13,6 +13,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    NgxSpinnerModule,
     ModalModule.forRoot()
   ],
   providers: [

@@ -5,9 +5,9 @@
       <!--      col-* classes reliably (works in Firefox, but not in Chrome).-->
       <tr>
         <th style="width: 30%">Name</th>
-        <th style="width: 5%">Quantity</th>
         <th style="width: 10%">Color</th>
         <th style="width: 10%">Size</th>
+        <th style="width: 5%">Quantity</th>
         <th style="width: 10%">Price</th>
         <th style="width: 10%">Actions</th>
       </tr>
@@ -16,12 +16,12 @@
       <ng-container>
         <tr *ngFor="let item of cart.cartItem; let i = index;">
           <td>{{item.productName}}</td>
+          <td>{{item.variantColor}}</td>
+          <td>{{item.variantSize}}</td>
           <td>
             <input class="form-control text-center" type="number" value="2" min="1" [(ngModel)]="item.quantity"
                    (change)="onQuantityChange(item)">
           </td>
-          <td>{{item.variantColor}}</td>
-          <td>{{item.variantSize}}</td>
           <td>{{item.productPrice * item.quantity | currency:'BDT' :'symbol-narrow'}}</td>
           <td>
             <button class="btn btn-outline-danger btn-sm" (click)="onRemoveItem(item)">Remove</button>
@@ -32,7 +32,7 @@
     </table>
     <div class="totals mt-4">
       <div class="totals-item totals-item-total">
-        <input class="totals-value mt-2" [disabled]="true" type="text" value='Total: {{ getTotalPrice() }} Taka'/>
+        <input class="totals-value mt-2" [disabled]="true" type="text" value='Total: {{ totalPrice }} Taka'/>
       </div>
     </div>
     <button class="btn btn-success btn-lg float-right" (click)="onCheckout(template)">Checkout</button>
