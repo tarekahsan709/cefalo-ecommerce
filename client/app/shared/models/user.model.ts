@@ -1,7 +1,12 @@
-export class User {
+export class IUser {
   // tslint:disable-next-line: variable-name
-  _id?: string;
-  username?: string;
-  email?: string;
-  role?: string;
+  id?: string;
+  email: string;
+  password: string;
+  token: string;
+}
+
+export interface IApiResponse {
+  status: boolean;
+  error?: string;
 }

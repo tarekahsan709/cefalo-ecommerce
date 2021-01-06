@@ -1,42 +1,57 @@
 import * as bcrypt from 'bcryptjs';
-import * as mongoose from 'mongoose';
+import { Document, Error, Model, model, Schema } from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-  username: String,
-  email: { type: String, unique: true, lowercase: true, trim: true },
-  password: String,
-  role: String
-});
+type comparePasswordFunction = (
+  candidatePassword: string,
+  cb: (err: any, isMatch: any) => {}
+) => void;
 
-// Before saving the user, hash the password
-userSchema.pre('save', function(next): void {
-  const user = this;
-  if (!user.isModified('password')) { return next(); }
-  bcrypt.genSalt(10, (err, salt) => {
-    if (err) { return next(err); }
-    bcrypt.hash(user.password, salt, (error, hash) => {
-      if (error) { return next(error); }
-      user.password = hash;
-      next();
-    });
-  });
-});
+type generateHash = (password: string) => string;
 
-userSchema.methods.comparePassword = function(candidatePassword, callback): void {
-  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-    if (err) { return callback(err); }
-    callback(null, isMatch);
-  });
+export interface IUser extends Document {
+  name?: string;
+  email: string;
+  password: string;
+  comparePassword: comparePasswordFunction;
+  generateHash: generateHash;
+}
+
+export const userSchema: Schema = new Schema({
+  // FIXME: Check required
+  name: {
+    type: String,
+    // required: true,
+  },
+  email: {
+    type: String,
+    unique: true,
+    lowercase: true,
+    trim: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+})
+  .set('autoIndex', true)
+  .set('minimize', false)
+  .set('timestamps', true);
+
+userSchema.methods.comparePassword = function (
+  candidatePassword: string,
+  callback: any
+) {
+  bcrypt.compare(
+    candidatePassword,
+    this.password,
+    (err: Error, isMatch: boolean) => {
+      callback(err, isMatch);
+    }
+  );
 };
 
-// Omit the password when returning a user
-userSchema.set('toJSON', {
-  transform: (doc, ret, options) => {
-    delete ret.password;
-    return ret;
-  }
-});
+userSchema.methods.generateHash = (password): string => {
+  return bcrypt.hashSync(password, 10);
+};
 
-const User = mongoose.model('User', userSchema);
-
-export default User;
+export const User: Model<IUser> = model<IUser>('User', userSchema);

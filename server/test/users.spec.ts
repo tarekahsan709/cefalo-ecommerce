@@ -1,103 +1,72 @@
 import * as chai from 'chai';
+import { after, before, it } from 'mocha';
 import chaiHttp = require('chai-http');
-import { describe, it } from 'mocha';
+
+import * as server from '../server';
+
+import { User } from '../models/user';
+import { testUser, testUserWrongPass } from '../config/seed';
 
 process.env.NODE_ENV = 'test';
-import { app } from '../app';
-import User from '../models/user';
 
-chai.use(chaiHttp).should();
+const expect = chai.expect;
+chai.use(chaiHttp);
 
-describe('Users', () => {
-
-  beforeEach(done => {
-    User.remove({}, err => {
-      done();
-    });
+describe('POST /register', () => {
+  before(async function () {
+    await User.deleteMany({});
   });
 
-  describe('Backend tests for users', () => {
-
-    it('should get all the users', done => {
-      chai.request(app)
-        .get('/api/users')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('array');
-          res.body.length.should.be.eql(0);
-          done();
-        });
-    });
-
-    it('should get users count', done => {
-      chai.request(app)
-        .get('/api/users/count')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('number');
-          res.body.should.be.eql(0);
-          done();
-        });
-    });
-
-    it('should create new user', done => {
-      const user = new User({ username: 'Dave', email: 'dave@example.com', role: 'user' });
-      chai.request(app)
-        .post('/api/user')
-        .send(user)
-        .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.be.a('object');
-          res.body.should.have.a.property('username');
-          res.body.should.have.a.property('email');
-          res.body.should.have.a.property('role');
-          done();
-        });
-    });
-
-    it('should get a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(app)
-          .get(`/api/user/${newUser.id}`)
-          .end((err, res) => {
-            res.should.have.status(200);
-            res.body.should.be.a('object');
-            res.body.should.have.property('username');
-            res.body.should.have.property('email');
-            res.body.should.have.property('role');
-            res.body.should.have.property('_id').eql(newUser.id);
-            done();
-          });
-      });
-    });
-
-    it('should update a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(app)
-          .put(`/api/user/${newUser.id}`)
-          .send({ username: 'User 2' })
-          .end((err, res) => {
-            res.should.have.status(200);
-            done();
-          });
-      });
-    });
-
-    it('should delete a user by its id', done => {
-      const user = new User({ username: 'User', email: 'user@example.com', role: 'user' });
-      user.save((error, newUser) => {
-        chai.request(app)
-          .del(`/api/user/${newUser.id}`)
-          .end((err, res) => {
-            res.should.have.status(200);
-            done();
-          });
-      });
-    });
+  after(async function () {
+    await User.deleteMany({});
   });
 
+  it('should register a new user with valid parameters', async function () {
+    const res = await chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser);
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.be.a('object');
+    expect(res.body).to.have.property('token');
+  });
+
+  it('should return some defined error message with valid parameters', async function () {
+    const res = await chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser);
+
+    expect(res.status).to.equal(400);
+  });
 });
 
+describe('POST /login', () => {
+  before(async function () {
+    const res = await chai
+      .request(server)
+      .post('/api/v1/users/register')
+      .send(testUser);
+  });
 
+  it('should get a log in user', async function () {
+    const res = await chai
+      .request(server)
+      .post('/api/v1/users/login')
+      .send(testUser);
+
+    expect(res.status).to.equal(200);
+    expect(res.body).to.be.a('object');
+    expect(res.body).to.have.property('token');
+  });
+
+  it('should return error with error message ', async function () {
+    const res = await chai
+      .request(server)
+      .post('/api/v1/users/login')
+      .send(testUserWrongPass);
+
+    expect(res.status).to.equal(401);
+  });
+});

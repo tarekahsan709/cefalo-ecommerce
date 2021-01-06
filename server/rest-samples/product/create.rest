@@ -1,0 +1,29 @@
+POST http://localhost:3000/api/v1/products HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmVmNTlkZDg0YjQ5ZjYzZjg4M2IyNTIiLCJuYW1lIjoibmF6bXVsIGFoc2FuIiwiZW1haWwiOiJuYXptdWwuYWhzYW5AamVlb24uY28iLCJpYXQiOjE2MDk1MjIyMzMsImV4cCI6MTYwOTc4MTQzMywiaXNzIjoiNWZlZjU5ZGQ4NGI0OWY2M2Y4ODNiMjUyIn0.leLrIYQp3Ua_mPLrvGaaLM3FgHR-OVcycGIjHjZ_xj4
+content-type: application/json
+
+{
+  "id": "1",
+  "name": "T-Shirt",
+  "price": "250",
+  "available": true,
+  "variants": [
+    {
+      "color": "white",
+      "size": [
+        "large",
+        "medium",
+        "extra-large"
+      ],
+      "quantity": "3"
+    },
+    {
+      "color": "red",
+      "size": [
+        "large",
+        "medium"
+      ],
+      "quantity": "7"
+    }
+  ]
+}

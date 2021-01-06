@@ -1,17 +1,11 @@
-import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
-export class AppComponent implements AfterViewChecked {
+export class AppComponent implements OnInit {
+  constructor() {}
 
-  constructor(public auth: AuthService,
-              private changeDetector: ChangeDetectorRef) { }
-
-  ngAfterViewChecked(): void {
-    this.changeDetector.detectChanges();
-  }
-
+  ngOnInit(): void {}
 }

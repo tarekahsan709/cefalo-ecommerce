@@ -1,0 +1,44 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { IProduct } from '../../shared/models/product.model';
+import { CartService } from '../../shared/services/cart.service';
+import { ProductService } from '../../shared/services/product.service';
+import { Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss'],
+})
+export class ProductListComponent implements OnInit, OnDestroy {
+  products: IProduct[];
+
+  productsSubscription: Subscription;
+
+  constructor(
+    private productSvc: ProductService,
+    private cartSvc: CartService
+  ) {}
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  ngOnDestroy(): void {
+    this.productsSubscription.unsubscribe();
+  }
+
+  getProducts(): void {
+    this.productsSubscription = this.productSvc.getProducts().subscribe(
+      (data) => {
+        this.products = data.products;
+      },
+      (err: any) => console.error('Products retrieved failed'),
+      () => console.log('All product loaded')
+    );
+  }
+
+  hasAlreadyAdded(product): boolean {
+    return this.cartSvc.hasProductAdded(product.id);
+  }
+}

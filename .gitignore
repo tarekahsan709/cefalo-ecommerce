@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+*.seed
+*.log
+debug.log
 # compiled output
 /dist
 /tmp
@@ -47,3 +50,6 @@ Thumbs.db
 
 # MongoDB
 /data
+
+# API keys and secrets
+.env
