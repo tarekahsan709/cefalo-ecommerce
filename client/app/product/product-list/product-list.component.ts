@@ -1,19 +1,16 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { IProduct } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
 import { ProductService } from '../../shared/services/product.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
-export class ProductListComponent implements OnInit, OnDestroy {
+export class ProductListComponent implements OnInit {
   products: IProduct[];
-
-  productsSubscription: Subscription;
 
   constructor(
     private productSvc: ProductService,
@@ -24,12 +21,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.getProducts();
   }
 
-  ngOnDestroy(): void {
-    this.productsSubscription.unsubscribe();
-  }
-
   getProducts(): void {
-    this.productsSubscription = this.productSvc.getProducts().subscribe(
+    this.productSvc.getProducts().subscribe(
       (data) => {
         this.products = data.products;
       },

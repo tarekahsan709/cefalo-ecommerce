@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -11,13 +11,12 @@ import ToastMessage from 'client/app/shared/util/toast-message';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from '../../shared/services/auth.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
 })
-export class RegisterComponent implements OnInit, OnDestroy {
+export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   email = new FormControl('', [
     Validators.email,
@@ -29,8 +28,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     Validators.required,
     Validators.minLength(6),
   ]);
-
-  logoutSubscription: Subscription;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,10 +42,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     if (this.auth.hasAuthenticated()) {
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     }
-  }
-
-  ngOnDestroy(): void {
-    this.logoutSubscription.unsubscribe();
   }
 
   buildForm(): void {
@@ -67,7 +60,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   register(): void {
-    this.logoutSubscription = this.auth.register(this.registerForm.value).subscribe((res) => {
+    this.auth.register(this.registerForm.value).subscribe((res) => {
       this.toastr.success(ToastMessage.SUCCESSFULL_REGISTRATION);
       this.router.navigateByUrl(RoutesUrl.LOGIN);
     });

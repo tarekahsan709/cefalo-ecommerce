@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import RoutesUrl from 'client/app/shared/util/routes-url';
 import ToastMessage from 'client/app/shared/util/toast-message';
@@ -7,20 +7,17 @@ import { ToastrService } from 'ngx-toastr';
 
 import { ICart } from '../../shared/models/cart.model';
 import { CartService } from '../../shared/services/cart.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.scss'],
 })
-export class CheckOutComponent implements OnInit, OnDestroy {
+export class CheckOutComponent implements OnInit {
   modalRef: BsModalRef;
 
   cart: ICart;
   totalPrice: number;
-
-  priceSubscription: Subscription;
 
   constructor(
     private cartSvc: CartService,
@@ -34,12 +31,8 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     this.loadTotalPrice();
   }
 
-  ngOnDestroy(): void {
-    this.priceSubscription.unsubscribe();
-  }
-
   private loadTotalPrice(): void {
-    this.priceSubscription = this.cartSvc.getTotalPrice(this.cart).subscribe((data) => {
+    this.cartSvc.getTotalPrice(this.cart).subscribe((data) => {
       this.totalPrice = data.totalPrice;
     });
   }

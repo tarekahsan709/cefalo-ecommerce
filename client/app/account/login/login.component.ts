@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -11,13 +11,12 @@ import ToastMessage from 'client/app/shared/util/toast-message';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthService } from '../../shared/services/auth.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   email = new FormControl('', [
     Validators.email,
@@ -29,8 +28,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     Validators.required,
     Validators.minLength(4),
   ]);
-
-  loginSubscription: Subscription;
 
   constructor(
     private auth: AuthService,
@@ -45,10 +42,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (this.auth.hasAuthenticated()) {
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     }
-  }
-
-  ngOnDestroy(): void{
-    this.loginSubscription.unsubscribe();
   }
 
   buildForm(): void {
@@ -67,7 +60,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login(): void {
-    this.loginSubscription = this.auth.login(this.loginForm.value).subscribe((res) => {
+    this.auth.login(this.loginForm.value).subscribe((res) => {
       this.toastr.success(ToastMessage.SUCCESSFULL_LOGIN);
       this.router.navigateByUrl(RoutesUrl.PRODUCT);
     });

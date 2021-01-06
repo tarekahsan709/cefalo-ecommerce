@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import RoutesUrl from 'client/app/shared/util/routes-url';
 import ToastMessage from 'client/app/shared/util/toast-message';
@@ -8,14 +8,13 @@ import { ICartItem } from '../../shared/models/cart.model';
 import { IProduct, IVariant } from '../../shared/models/product.model';
 import { CartService } from '../../shared/services/cart.service';
 import { ProductService } from '../../shared/services/product.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
-export class ProductDetailsComponent implements OnInit, OnDestroy {
+export class ProductDetailsComponent implements OnInit {
   private readonly defaultQuantity = 1;
   selectedColor: string;
   selectedSizeList: string[];
@@ -26,8 +25,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   selectedVariant: IVariant;
 
   private readonly firstItemIndex = 0;
-
-  productSubscription: Subscription;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -42,12 +39,8 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     this.getProductDetails(id);
   }
 
-  ngOnDestroy(): void {
-    this.productSubscription.unsubscribe();
-  }
-
   getProductDetails(id: string): void {
-    this.productSubscription = this.productSvc.getProductById(id).subscribe(
+    this.productSvc.getProductById(id).subscribe(
       (data) => {
         this.product = data;
         this.loadDefaultVariant();
