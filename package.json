@@ -18,6 +18,7 @@
     "backend": "concurrently \"tsc -w -p server\" \"nodemon dist/server/server.js\"",
     "dev": "concurrently \"mongod\" \"ng serve --open\" \"tsc -w -p server\" \"nodemon dist/server/server.js\"",
     "prod": "concurrently \"mongod\" \"ng build --aot --prod && tsc -p server && node dist/server/server.js\"",
+    "seed": "tsc -p server && node dist/server/config/seed.js",
     "test": "ng test",
     "testbe": "tsc -p server && mocha dist/server/test --exit",
     "lint": "ng lint && htmlhint \"client/**/*.html\" && sass-lint \"client/**/*.scss\" -v",

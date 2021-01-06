@@ -1,16 +1,13 @@
 import * as mongoose from 'mongoose';
 
 import logger from '../util/logger';
-import { MONGODB_TEST_URI, MONGODB_URI, SEED_DB } from './secrets';
-import { Seed } from './Seed';
+import { MONGODB_TEST_URI, MONGODB_URI } from './secrets';
 
 let connection = null;
 
-// FIXME: Convert to class
-function connectDatabase() {
+async function connectDatabase() {
   const connectionString = getConnectionString();
   const connectionOptions = getConnectionOption();
-
   const run = async () => {
     await mongoose.connect(connectionString, connectionOptions, (err) => {
       if (err) {
@@ -30,17 +27,7 @@ function connectDatabase() {
     if (process.env.NODE_ENV != 'test') {
       logger.info('Database has connected');
     }
-    if (SEED_DB) {
-      // logger.info('Db seed true');
-      // await runDbSeed();
-    }
   });
-}
-
-export async function runDbSeed(): Promise<void> {
-  const seed = new Seed();
-  await seed.seedUsers();
-  await seed.seedProducts();
 }
 
 function getConnectionString(): string {

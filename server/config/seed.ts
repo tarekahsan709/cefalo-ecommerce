@@ -1,6 +1,9 @@
+import * as dotenv from 'dotenv';
+
 import { Product } from '../models/product';
 import { User } from '../models/user';
 import logger from '../util/logger';
+import { connectDatabase } from './mongo';
 
 export const testUser = {
   name: 'Test User',
@@ -279,32 +282,39 @@ export const products = [
   },
 ];
 
-export class Seed {
-  constructor() {}
+dotenv.config();
 
-  /**
-   * Remove all users from the collection and Add seed users to collection
-   */
-  public async seedUsers() {
-    try {
-      await User.deleteMany({});
-      await User.insertMany(users);
-    } catch (e) {
-      logger.error('Error populating user', e);
-    }
-    logger.info('Finished populating users');
-  }
-
-  /**
-   * Remove all products from the collection and Add seed users to collection
-   */
-  public async seedProducts() {
-    try {
-      await Product.deleteMany({});
-      await Product.insertMany(products);
-    } catch (e) {
-      logger.error('Error populating products', e);
-    }
-    logger.info('Finished populating products');
-  }
+async function runDbSeed(): Promise<void> {
+  await connectDatabase();
+  await seedUsers();
+  await seedProducts();
+  process.exit();
 }
+
+/**
+ * Remove all users from the collection and Add seed users to collection
+ */
+async function seedUsers(): Promise<void> {
+  try {
+    await User.deleteMany({});
+    await User.insertMany(users);
+  } catch (e) {
+    logger.error('Error populating user', e);
+  }
+  logger.info('Finished populating users');
+}
+
+/**
+ * Remove all products from the collection and Add seed users to collection
+ */
+async function seedProducts(): Promise<void> {
+  try {
+    await Product.deleteMany({});
+    await Product.insertMany(products);
+  } catch (e) {
+    logger.error('Error populating products', e);
+  }
+  logger.info('Finished populating products');
+}
+
+runDbSeed();
