@@ -13,7 +13,7 @@
     "build": "ng build && tsc -p server",
     "build-server": "tsc -p server",
     "buildprod": "ng build --aot --prod && tsc -p server",
-    "start": "node dist/server/app.js",
+    "start": "node dist/server/server.js",
     "predev": "tsc -p server",
     "backend": "concurrently \"tsc -w -p server\" \"nodemon dist/server/server.js\"",
     "dev": "concurrently \"mongod\" \"ng serve --open\" \"tsc -w -p server\" \"nodemon dist/server/server.js\"",

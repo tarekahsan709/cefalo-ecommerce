@@ -75,8 +75,7 @@ class Server {
   public start(): void {
     this.app.listen(this.app.get('port'), () => {
       logger.info(
-        'API is running at http://localhost:%d',
-        this.app.get('port')
+        'API is running at http://localhost:'+this.app.get('port')
       );
     });
   }
