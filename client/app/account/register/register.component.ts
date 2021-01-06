@@ -18,6 +18,12 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  name = new FormControl('', [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(30),
+    Validators.pattern('[a-zA-Z0-9_-\\s]*')
+  ]);
   email = new FormControl('', [
     Validators.email,
     Validators.required,
@@ -46,9 +52,14 @@ export class RegisterComponent implements OnInit {
 
   buildForm(): void {
     this.registerForm = this.formBuilder.group({
+      name: this.name,
       email: this.email,
       password: this.password,
     });
+  }
+
+  setClassName(): object {
+    return { 'has-danger': !this.name.pristine && !this.name.valid };
   }
 
   setClassEmail(): object {

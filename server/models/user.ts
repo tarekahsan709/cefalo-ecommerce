@@ -17,10 +17,8 @@ export interface IUser extends Document {
 }
 
 export const userSchema: Schema = new Schema({
-  // FIXME: Check required
   name: {
     type: String,
-    // required: true,
   },
   email: {
     type: String,

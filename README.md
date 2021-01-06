@@ -2,6 +2,9 @@
 
 [![](https://github.com/tarekahsan709/cefalo-ecommerce/workflows/Build/badge.svg)](https://github.com/tarekahsan709/cefalo-ecommerce/actions?query=workflow%3ABuild) [![](https://github.com/tarekahsan709/cefalo-ecommerce/workflows/Tests/badge.svg)](https://github.com/tarekahsan709/cefalo-ecommerce/actions?query=workflow%3ATests)
 
+## :flashlight: Live
+#### https://cefalo-ecommerce-nazmul.herokuapp.com
+
 ## :bookmark: Table of Contents
 - [Built with](#hammer-built-with)
 - [Tools and Technologies](#gear-tools-and-technologies)
@@ -9,7 +12,6 @@
 - [Installation](#installation)
 - [Run and Test](#run)
 - [Database Seeding](#floppy_disk-database-seeding)
-- [Demo](#flashlight-demo)
 
 ## :hammer: Built with
 - [TypeScript](https://www.typescriptlang.org/)
@@ -81,9 +83,6 @@ Run `npm run lint` to execute [TS linting](https://github.com/palantir/tslint), 
 
 ## :floppy_disk: Database Seeding
 $ npm run seed
-
-## :flashlight: Demo
-#### Production: https://cefalo-ecommerce-nazmul.herokuapp.com
 
 ### Author
 
