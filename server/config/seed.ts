@@ -17,13 +17,6 @@ export const testUserWrongPass = {
   password: 'wrong',
 };
 
-export const users = [
-  {
-    name: 'Admin',
-    email: 'admin@example.com',
-    password: 'admin',
-  },
-];
 export const products = [
   {
     id: 1,
@@ -74,7 +67,13 @@ export const products = [
     name: 'Raisin - Dark',
     price: 3,
     available: true,
-    variants: [{ color: 'Crimson', size: [], quantity: 645 }],
+    variants: [
+      {
+        color: 'Crimson',
+        size: ['large', 'medium', 'extra-large'],
+        quantity: 645
+      }
+    ],
   },
   {
     id: 5,
@@ -225,7 +224,7 @@ export const products = [
     price: 69,
     available: false,
     variants: [
-      { color: 'Red', size: ['large', 'medium', 'extra-large'], quantity: 663 },
+      {color: 'Red', size: ['large', 'extra-large'], quantity: 663},
     ],
   },
   {
@@ -286,22 +285,8 @@ dotenv.config();
 
 async function runDbSeed(): Promise<void> {
   await connectDatabase();
-  await seedUsers();
   await seedProducts();
   process.exit();
-}
-
-/**
- * Remove all users from the collection and Add seed users to collection
- */
-async function seedUsers(): Promise<void> {
-  try {
-    await User.deleteMany({});
-    await User.insertMany(users);
-  } catch (e) {
-    logger.error('Error populating user', e);
-  }
-  logger.info('Finished populating users');
 }
 
 /**
