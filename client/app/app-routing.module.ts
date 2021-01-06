@@ -4,11 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/account/login',
-    pathMatch: 'full',
-  },
+  { path: '', redirectTo: '/product', pathMatch: 'full' },
   {
     path: 'account',
     loadChildren: () =>
@@ -24,13 +20,10 @@ const routes: Routes = [
     path: 'cart',
     loadChildren: () =>
       import('./cart/cart.module').then((module) => module.CartModule),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
-  {
-    path: '**',
-    redirectTo: '/account/login',
-    pathMatch: 'full',
-  },
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
+
 ];
 
 @NgModule({

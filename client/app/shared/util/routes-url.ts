@@ -1,7 +1,7 @@
 enum RoutesUrl {
   ACCOUNT = '/account',
   LOGIN = '/account/login',
-  LOGOUT = '/account/logut',
+  LOGOUT = '/account/logout',
   REGISTRATION = '/account/register',
 
   PRODUCT = '/product',
